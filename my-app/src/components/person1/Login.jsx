@@ -1,5 +1,3 @@
-import './Login.css'
-
 function Login () {
     var users = [{username: "Kilvyn", password: "imawesome"}];
 
