@@ -1,0 +1,89 @@
+.profileScreen {
+    padding: 2em;
+    margin: 30px;
+}
+
+.profileScreen > div {
+    margin: 35px 0;
+    :not('.cards') {
+    padding: 10px;
+    }
+}
+
+.profileScreen .profileCard {
+    padding: 50px 0;
+}
+
+.profileCard .imagebox {
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+
+    outline: black 2px solid; 
+    outline-offset: 5px; 
+    border-radius: 50%;
+
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+.profileCard button {
+    color: var(--secondary);
+    border: var(--secondary) 1px solid;
+    padding: 4px 12px;
+    margin-top: 20px;
+    font-size: 12px;
+    border-radius: 30px;
+}
+
+.profileCard button:hover {
+    background-color: var(--secondary-light);
+}
+
+.imagebox img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.profileCard .name {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.profileCard .joindate {
+    color: grey;
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.cards > div {
+    padding: 1em;
+    height: 16vh;
+}
+
+.cards > div p {
+    margin: 2px 0;
+}
+
+.cards > div p.ofuser {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+form {
+    padding: 10px;
+    background-color: tomato;
+    color: black;
+}
+
+form input {
+    background-color: aliceblue;
+    padding: 5px 10px;
+}
+
+form button {
+    background-color: aquamarine;
+    padding: 5px;
+}

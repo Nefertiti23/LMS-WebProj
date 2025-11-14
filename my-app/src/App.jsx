@@ -1,12 +1,25 @@
-import { useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Profile from './components/person4/settings_page/Profile';
 
 function App() {
-  let navigate = useNavigate();
   
   return (
     <>
-      <h1>Welcome to My App</h1>
-      <button onClick={() => navigate('/Login')}>Login</button>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Profile 
+        user = {
+        {name: "Jacuel", 
+        dateOfJoin: "10-09-23", 
+        imageURL: "vite.svg", 
+        streakDays: 3, 
+        timeSpent: 13, 
+        userStatus: "Silver"
+        } 
+      }
+        />}></Route>
+      </Routes>
+      </BrowserRouter>
     </>
   );
 }
