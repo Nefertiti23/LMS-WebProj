@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Profile from './components/person4/settings_page/Profile';
+import AccountInfo from './components/person4/accountinfo/AccountInfo';
+import Profile from './components/person4/profile/Profile';
 
 function App() {
   
@@ -14,7 +15,9 @@ function App() {
         imageURL: "vite.svg", 
         streakDays: 3, 
         timeSpent: 13, 
-        userStatus: "Silver"
+        userStatus: "Silver",
+        email: "jacuelresmone@wata.com",
+        password: "plinquet243"
         } 
       }
         />}></Route>

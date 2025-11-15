@@ -10,6 +10,7 @@
   --secondary-light: #f0edf6;
   --primaryButtonHover: #3474da;
   --lightButtonHover: #f2f5fe;
+  --inpuOutline: #dcdae1;
 }
 
 body {
@@ -27,4 +28,13 @@ html {
 /* Consistent box-sizing */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+.screen {
+  padding: 2em;
+  width: 60vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
