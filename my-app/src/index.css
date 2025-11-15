@@ -8,6 +8,8 @@
   --text: #1f2937;
 
   --secondary-light: #f0edf6;
+  --primaryButtonHover: #3474da;
+  --lightButtonHover: #f2f5fe;
 }
 
 body {
