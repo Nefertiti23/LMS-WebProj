@@ -12,7 +12,9 @@ export default function Profile ({user}) {
 
   const updateUser = () => {
     var name = document.getElementById('newname').value;
-    if (name === '') alert("Please enter a name");
+    if (name === '') {
+      alert("Please enter a name");
+    }
     else {
       setUser(prevuser => {
         return {...prevuser, name: name, imageURL: formImg}
@@ -23,7 +25,7 @@ export default function Profile ({user}) {
 
   return (
     <>
-    <div className="profileScreen">
+    <div className="screen">
       {/* form to edit profile info h-screen bg-stone-500/75 fixed z-100 boder-2 border-amber-300*/}
       <div className='formBg' style={{display: formDisplay}}>
         <form className='rounded-md'>
@@ -37,7 +39,7 @@ export default function Profile ({user}) {
             <input className='rounded-md' id="newname" type='text' defaultValue={theuser.name} required></input>
           </div>
           <div className='buttonbox'>
-            <button id="cancel" type='button' onClick={() => setDisplay('none')}>Cancel</button>
+            <button id="cancel" type='button' onClick={() => {setDisplay('none'); setImg(theuser.imageURL);}}>Cancel</button>
             <button id="confirm" type='button' onClick={updateUser}>Confirm</button>
           </div>
         </form>
@@ -54,18 +56,22 @@ export default function Profile ({user}) {
       </div>
 
       {/* 3 cards: status, time spent, days of streak */}
-      <div className="cards grid grid-cols-3 gap-8">
+      <div className="cards grid grid-cols-4 gap-10">
         <div className="border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
           <p className='ofuser'>{theuser.userStatus}</p>
-          <p className='text-sm font-medium text-neutral-500'>STATUS</p>
+          <p className='text-xs font-medium text-neutral-500'>STATUS</p>
+        </div>
+        <div className="border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
+          <p className='ofuser'>4</p>
+          <p className='text-xs font-medium text-neutral-500'>COURSES COMPLETED</p>
         </div>
         <div className="border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
           <p className='ofuser'>{theuser.timeSpent}m</p>
-          <p className='text-sm font-medium text-neutral-500'>AVG TIME SPENT LEARNING</p>
+          <p className='text-xs font-medium text-neutral-500'>AVG TIME SPENT LEARNING</p>
         </div>
         <div className="border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
           <p className='ofuser'>{theuser.streakDays} days</p>
-          <p className='text-sm font-medium text-neutral-500'>LONGEST RUNNING STREAK</p>
+          <p className='text-xs font-medium text-neutral-500'>LONGEST RUNNING STREAK</p>
         </div>
       </div>
     </div>

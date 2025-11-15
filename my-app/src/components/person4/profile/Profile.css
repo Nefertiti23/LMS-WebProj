@@ -1,12 +1,4 @@
-.profileScreen {
-    padding: 2em;
-
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.profileScreen .profileCard {
+.profileCard {
     padding: 50px 0;
 }
 
@@ -55,12 +47,15 @@
 }
 
 .cards > div {
-    padding: 1em;
+    padding: 1.3em;
     height: 16vh;
+    overflow: hidden;
+    overflow-wrap: break-word;
 }
 
 .cards > div p {
     margin: 2px 0;
+    text-align: center;
 }
 
 .cards > div p.ofuser {
@@ -101,7 +96,7 @@ form img:hover {
 }
 
 form input {
-    border: 1.5px solid var(--secondary);
+    border: 1.5px solid var(--inpuOutline);
     padding: 5px 10px;
 }
 

@@ -1,0 +1,48 @@
+.accountbox {
+    width: 100%;
+}
+
+.accountbox .line {
+    height: 0.8px;
+}
+
+form button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    width: max-content;
+    font-size: 14px;
+}
+
+form button.saveBtn {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+form button.saveBtn:hover {
+    background-color: var(--primaryButtonHover);
+    cursor: pointer;
+}
+
+form button.cancelBtn {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+}
+
+form button.cancelBtn:hover {
+    background-color: var(--lightButtonHover);
+    cursor: pointer;
+}
+
+form button.delBtn {
+    background-color: #e83b3b;
+    padding: 8px 14px;
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--background);
+}
+
+form button.delBtn:hover {
+    background-color: #d53737;
+    cursor: pointer;
+}
