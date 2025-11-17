@@ -15,7 +15,7 @@ form button {
 
 form button.saveBtn {
     background-color: var(--primary);
-    color: var(--background);
+    color: white;
 }
 
 form button.saveBtn:hover {
@@ -39,7 +39,7 @@ form button.delBtn {
     padding: 8px 14px;
     margin-top: 20px;
     font-weight: 500;
-    color: var(--background);
+    color: white;
 }
 
 form button.delBtn:hover {

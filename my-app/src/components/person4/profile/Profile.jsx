@@ -26,9 +26,9 @@ export default function Profile ({user}) {
   return (
     <>
     <div className="screen">
-      {/* form to edit profile info h-screen bg-stone-500/75 fixed z-100 boder-2 border-amber-300*/}
+      {/* form to edit profile*/}
       <div className='formBg' style={{display: formDisplay}}>
-        <form className='rounded-md'>
+        <form className='profileForm rounded-md'>
             <div>
               <img id='selectedIMG' src={formImg} className='border-2 border-slate-700 my-4' onClick={() => document.getElementById('fileInput').click()} alt="Click to upload"></img>
               <p className='text-sm text-slate-500'>Click avatar to change</p>
@@ -48,7 +48,7 @@ export default function Profile ({user}) {
       <h3 className='font-semibold text-3xl'>Profile</h3>
 
       {/* profile card showing user avatar, name, date of joining */}
-      <div className="profileCard border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
+      <div className="profileCard border border-slate-300 rounded-md flex flex-col justify-center items-center">
         <div className='imagebox'><img src={theuser.imageURL}></img></div>
         <p className='name'>{theuser.name}</p>
         <p className='joindate'>Joined: {theuser.dateOfJoin}</p>
@@ -56,20 +56,20 @@ export default function Profile ({user}) {
       </div>
 
       {/* 3 cards: status, time spent, days of streak */}
-      <div className="cards grid grid-cols-4 gap-10">
-        <div className="border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
+      <div className="cards grid grid-cols-4 gap-5">
+        <div className="border border-slate-300 rounded-md flex flex-col justify-center items-center">
           <p className='ofuser'>{theuser.userStatus}</p>
           <p className='text-xs font-medium text-neutral-500'>STATUS</p>
         </div>
-        <div className="border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
+        <div className="border border-slate-300 rounded-md flex flex-col justify-center items-center">
           <p className='ofuser'>4</p>
           <p className='text-xs font-medium text-neutral-500'>COURSES COMPLETED</p>
         </div>
-        <div className="border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
+        <div className="border border-slate-300 rounded-md flex flex-col justify-center items-center">
           <p className='ofuser'>{theuser.timeSpent}m</p>
           <p className='text-xs font-medium text-neutral-500'>AVG TIME SPENT LEARNING</p>
         </div>
-        <div className="border-2 border-slate-300 rounded-md flex flex-col justify-center items-center">
+        <div className="border border-slate-300 rounded-md flex flex-col justify-center items-center">
           <p className='ofuser'>{theuser.streakDays} days</p>
           <p className='text-xs font-medium text-neutral-500'>LONGEST RUNNING STREAK</p>
         </div>

@@ -8,6 +8,7 @@ export default function AccountInfo ({user}) {
 
     function resetNameForm () {
         document.getElementById('nameForm').reset();
+        document.getElementById('emailAlert').textContent = '';
     }
 
     function checkIfEndsWithCom(theemail) {
@@ -28,18 +29,20 @@ export default function AccountInfo ({user}) {
                 setEmailInput(newEmail);
                 setUser(prevuser => {return {...prevuser, email: newEmail}});
                 alert("Email successfully changed!");
+                document.getElementById('emailAlert').textContent = '';
+                resetNameForm();
             }
             else {
                 document.getElementById('emailAlert').textContent = "Please enter a correct email address";
             }
         }
 
-        if (newName && newName !== nameInput) {
+        if (newName !== '' && newName !== nameInput) {
             setNameInput(newName);
             setUser(prevuser => {return {...prevuser, name: newName}});
+            resetNameForm();
         }
 
-        resetNameForm();
     }
 
     function resetPassForm () {
@@ -56,8 +59,9 @@ export default function AccountInfo ({user}) {
             var newPass = document.getElementById('newPass').value;
             if (newPass.length >= 8) {
                 if (newPass === document.getElementById('confirmNewPass').value) {
-                    resetForm('passForm');
+                    resetPassForm();
                     setUser(prevuser => {return {...prevuser, password: newPass}});
+                    alert("Password sucessfully changed!");
                 }
                 else {
                     document.getElementById('conPassNo').textContent = "Password does not match";
@@ -79,17 +83,17 @@ export default function AccountInfo ({user}) {
             <h3 className='font-semibold text-3xl'>Account Details</h3>
 
             <div className="accountbox">
-                <div className="px-10 py-6 border border-slate-200 m-auto rounded-lg shadow-md flex flex-col gap-4">
+                <div className="px-10 py-6 border border-slate-200 m-auto rounded-lg shadow-md flex flex-col gap-4 bg-white">
                     <form className="flex flex-col gap-6 my-5" id="nameForm">
                         <h4 className="font-bold">Basic Information</h4>
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-sm">Email Address</label>
-                            <input id="newEmail" type='email' className="font-mono text-sm text-slate-600 ring-1 ring-slate-300 rounded-md py-2 px-3" defaultValue={emailInput}></input>
+                            <input id="newEmail" type='email' className="font-mono text-sm text-slate-600 rounded-md py-2 px-3" defaultValue={emailInput}></input>
                             <p id="emailAlert" className='text-xs text-red-700'></p>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-sm">Display Name</label>
-                            <input id="newName" type='text' className="font-mono text-sm text-slate-600 ring-1 ring-slate-300 rounded-md py-2 px-3" defaultValue={nameInput}></input>
+                            <input id="newName" type='text' className="font-mono text-sm text-slate-600 rounded-md py-2 px-3" defaultValue={nameInput}></input>
                             <p id="nameAlert" className='text-xs text-red-700'></p>
                         </div>
                         <div className='flex flex-row gap-4'>
@@ -102,17 +106,17 @@ export default function AccountInfo ({user}) {
                         <h4 className="font-bold">Change Password</h4>
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-sm">Current Password</label>
-                            <input id="currentPass" type='password' className="font-mono text-sm text-slate-600 ring-1 ring-slate-300 rounded-md py-2 px-3"></input>
+                            <input id="currentPass" type='password' className="font-mono text-sm text-slate-600 rounded-md py-2 px-3"></input>
                             <p id="currentPassAlert" className='text-xs text-red-700'></p>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-sm">New Password</label>
-                            <input id="newPass" type='password' className="font-mono text-sm text-slate-600 ring-1 ring-slate-300 rounded-md py-2 px-3"></input>
+                            <input id="newPass" type='password' className="font-mono text-sm text-slate-600 rounded-md py-2 px-3"></input>
                             <p id="charLen" className='text-xs text-slate-500'>Must be 8 characters long</p>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-sm">Confirm New Password</label>
-                            <input id="confirmNewPass" type='password' className="font-mono text-sm text-slate-600 ring-1 ring-slate-300 rounded-md py-2 px-3"></input>
+                            <input id="confirmNewPass" type='password' className="font-mono text-sm text-slate-600 rounded-md py-2 px-3"></input>
                             <p className='text-xs text-slate-500' id="conPassNo"></p>
                         </div>
                         <div className='flex flex-row gap-4'>

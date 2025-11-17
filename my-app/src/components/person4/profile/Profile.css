@@ -1,5 +1,6 @@
 .profileCard {
     padding: 50px 0;
+    background-color: white;
 }
 
 .profileCard .imagebox {
@@ -25,7 +26,7 @@
 }
 
 .profileCard button:hover {
-    background-color: var(--secondary-light);
+    background-color: var(--secondaryLight);
 }
 
 .imagebox img {
@@ -51,6 +52,7 @@
     height: 16vh;
     overflow: hidden;
     overflow-wrap: break-word;
+    background-color: white;
 }
 
 .cards > div p {
@@ -66,12 +68,9 @@
 .formBg {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    left: calc(var(--spacing)*64);
+    width: 85vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     margin: 0;
     padding: 0;
@@ -79,10 +78,11 @@
     background-color: #00000036;
 }
 
-form {
+form.profileForm {
     padding: 30px;
     background-color: white;
     width: 30vw;
+    margin: auto;
 }
 
 form img {
@@ -96,7 +96,7 @@ form img:hover {
 }
 
 form input {
-    border: 1.5px solid var(--inpuOutline);
+    border: 1.5px solid var(--inputOutline);
     padding: 5px 10px;
 }
 
@@ -123,7 +123,7 @@ form input:focus {
 
 .buttonbox button#confirm {
     background-color: var(--primary);
-    color: var(--background);
+    color: white;
 }
 
 .buttonbox button#confirm:hover {

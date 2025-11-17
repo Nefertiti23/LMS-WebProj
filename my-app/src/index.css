@@ -4,13 +4,14 @@
   /* Your color palette */
   --primary: #3b82f6;
   --secondary: #8b5cf6;
-  --background: #f9fafb;
+  --background: #f3efec;
   --text: #1f2937;
 
-  --secondary-light: #f0edf6;
+  --secondaryLight: #f0edf6;
   --primaryButtonHover: #3474da;
   --lightButtonHover: #f2f5fe;
-  --inpuOutline: #dcdae1;
+  --inputOutline: #dcdae1;
+  --textLighter: #becbda;
 }
 
 body {
@@ -32,9 +33,14 @@ html {
 
 .screen {
   padding: 2em;
-  width: 60vw;
-  margin: auto;
+  width: 75vw;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+nav {
+  background-color: var(--text);
+  color: var(--textLighter);
 }

@@ -1,30 +1,27 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AccountInfo from './components/person4/accountinfo/AccountInfo';
-import Profile from './components/person4/profile/Profile';
+import { BrowserRouter } from 'react-router-dom';
+import SideNav from './components/person4/navbar/Navbar';
+import Router from './components/person4/Router';
 
-function App() {
-  
+export default function App() {
+  const userData = {
+    name: "Jacuel", 
+    dateOfJoin: "10-09-23", 
+    imageURL: "vite.svg", 
+    streakDays: 3, 
+    timeSpent: 13, 
+    userStatus: "Silver",
+    email: "jacuelresmone@wata.com",
+    password: "plinquet243"
+  };
+
   return (
-    <>
-      <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Profile 
-        user = {
-        {name: "Jacuel", 
-        dateOfJoin: "10-09-23", 
-        imageURL: "vite.svg", 
-        streakDays: 3, 
-        timeSpent: 13, 
-        userStatus: "Silver",
-        email: "jacuelresmone@wata.com",
-        password: "plinquet243"
-        } 
-      }
-        />}></Route>
-      </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <div className="flex h-screen">
+        <SideNav />
+        <div className="flex-1 overflow-auto">
+          <Router user={userData} />
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;
