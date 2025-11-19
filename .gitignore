@@ -11,3 +11,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# vscode files
+.vscode
