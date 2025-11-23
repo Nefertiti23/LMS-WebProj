@@ -27,13 +27,13 @@ table td {
     padding: 4px 12px;
 }
 
-button {
+.paymentTable button {
     border: 1.5px solid black;
     padding: 2px 10px;
     border-radius: 6px;
 }
 
-button:hover {
+.paymentTable button:hover {
     background-color: var(--color-gray-200);
     cursor: pointer;
 }

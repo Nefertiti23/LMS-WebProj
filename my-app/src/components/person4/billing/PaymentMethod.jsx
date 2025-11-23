@@ -1,7 +1,7 @@
 function PaymentTable () {
     return (
         <>
-        <table>
+        <table className="paymentTable">
             <tbody>
                 <tr>
                     <td className="w-30">Visa</td>
