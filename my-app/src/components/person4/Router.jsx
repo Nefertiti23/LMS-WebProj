@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import AccountInfo from './accountinfo/AccountInfo';
 import Profile from './profile/Profile';
-import Billing from './billing/billing';
+import Billing from './billing/Billing';
 
 export default function Router({ user }) {
   return (
