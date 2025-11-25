@@ -1,10 +1,21 @@
 import './AccountInfo.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { storage } from '../../../utils/storage.js';
 
-export default function AccountInfo ({user}) {
-    const [theuser, setUser] = useState(user);
-    const [emailInput, setEmailInput] = useState(user.email);
-    const [nameInput, setNameInput] = useState(user.name);
+export default function AccountInfo ({a_user, handleUser}) {
+    const [theuser, setUser] = useState(a_user);
+    const [emailInput, setEmailInput] = useState(a_user.email);
+    const [nameInput, setNameInput] = useState(a_user.name);
+    const [formImg, setImg] = useState(a_user.imageURL);
+
+    useEffect(() => {
+        storage.set('currentUser', theuser);
+        handleUser(theuser);
+    }, [theuser]);
+
+    useEffect(() => {
+        storage.set('userImage', formImg);
+    }, [formImg]);
 
     function resetNameForm () {
         document.getElementById('nameForm').reset();
@@ -42,7 +53,6 @@ export default function AccountInfo ({user}) {
             setUser(prevuser => {return {...prevuser, name: newName}});
             resetNameForm();
         }
-
     }
 
     function resetPassForm () {
@@ -87,6 +97,11 @@ export default function AccountInfo ({user}) {
                     <form className="flex flex-col gap-6 my-5" id="nameForm">
                         <h4 className="font-bold">Basic Information</h4>
                         <div className="flex flex-col gap-2">
+                            <img id='selectedIMG' src={formImg} className='object-cover border-2 border-slate-700 my-4' onClick={() => document.getElementById('fileInput').click()} alt="Click to upload"></img>
+                            <p className='text-sm text-slate-500'>Click avatar to change</p>
+                            <input id='fileInput' type='file' accept ="image/jpeg, image/png, image/jpg" className='hidden' onChange={(e) => setImg(URL.createObjectURL(e.target.files[0]))}></input>
+                        </div>
+                        <div className="flex flex-col gap-2">
                             <label className="font-medium text-sm">Email Address</label>
                             <input id="newEmail" type='email' className="font-mono text-sm text-slate-600 rounded-md py-2 px-3" defaultValue={emailInput}></input>
                             <p id="emailAlert" className='text-xs text-red-700'></p>
@@ -96,6 +111,7 @@ export default function AccountInfo ({user}) {
                             <input id="newName" type='text' className="font-mono text-sm text-slate-600 rounded-md py-2 px-3" defaultValue={nameInput}></input>
                             <p id="nameAlert" className='text-xs text-red-700'></p>
                         </div>
+
                         <div className='flex flex-row gap-4'>
                             <button type="button" id="changeNameBtn" className="saveBtn" onClick={updateEmailName}>Save Changes</button>
                             <button type="button" id="cancel" className="cancelBtn" onClick={() => resetNameForm()}>Reset</button>
