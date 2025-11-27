@@ -54,7 +54,6 @@ export default function Billing ({user_sub, user_payments, handleUser, orderHist
         ...sub,
         isActive: sub.id === id,
         })));
-        // user_sub = selectedPlan.name;
 
         handleUser(u => ({...u, currentSub: selectedPlan.name}));
         console.log(selectedPlan.name);

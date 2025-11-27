@@ -4,6 +4,7 @@ import AccountInfo from './accountinfo/AccountInfo';
 import Profile from './profile/Profile';
 import Billing from './billing/Billing';
 import ProgressReports from './progressreps/ProgressReps';
+import Certificates from './certificates/Certificates';
 
 export default function Router({ user, userHandler }) {
   console.log(user.orders);
@@ -20,6 +21,7 @@ export default function Router({ user, userHandler }) {
       handleUser={userHandler}
       orderHistory={user.orders} />} />
       <Route path="/progressreps" element={<ProgressReports userP={user.userProgress} />} />
+      <Route path="/certificates" element={<Certificates completedCourses={user.userProgress.courses.completed} />} />
     </Routes>
   );
 }

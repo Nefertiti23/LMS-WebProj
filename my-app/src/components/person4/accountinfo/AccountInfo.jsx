@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 export default function AccountInfo ({a_user, handleUser}) {
     const [theuser, setUser] = useState(a_user);
     const [emailInput, setEmailInput] = useState(a_user.email);
-    const [nameInput, setNameInput] = useState(a_user.name);
+    const [nameInput, setNameInput] = useState(a_user.username);
     const [formImg, setImg] = useState(a_user.imageURL);
 
     useEffect(() => {
