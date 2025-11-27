@@ -1,6 +1,5 @@
 import './AccountInfo.css'
 import { useState, useEffect } from 'react';
-import { storage } from '../../../utils/storage.js';
 
 export default function AccountInfo ({a_user, handleUser}) {
     const [theuser, setUser] = useState(a_user);
@@ -9,12 +8,10 @@ export default function AccountInfo ({a_user, handleUser}) {
     const [formImg, setImg] = useState(a_user.imageURL);
 
     useEffect(() => {
-        storage.set('currentUser', theuser);
         handleUser(theuser);
     }, [theuser]);
 
     useEffect(() => {
-        storage.set('userImage', formImg);
     }, [formImg]);
 
     function resetNameForm () {

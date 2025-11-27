@@ -11,6 +11,9 @@ export default function SideNav() {
             <Link to='/billing' className='hover:bg-slate-900 px-2 py-1.5 rounded text-sm font-light'>
             Billing
             </Link>
+            <Link to='/progressreps' className='hover:bg-slate-900 px-2 py-1.5 rounded text-sm font-light'>
+            Progress
+            </Link>
         </div>
     </nav>
   );

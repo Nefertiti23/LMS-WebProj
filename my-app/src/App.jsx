@@ -9,11 +9,26 @@ export default function App() {
     var saved = localStorage.getItem('currentUser');
     return saved ? JSON.parse(saved) : {
       email: 'default@example.com',
-      name: 'Default User',
+      username: 'default username',
       password: 'password123',
       imageURL: '/vite.svg',
       billingInfo: ["Visa", "PayPal"],
-      currentSub: "Basic Plan"
+      currentSub: "Basic Plan",
+      orders: [
+        {orderId: 1, name: "Javascript Fundamentals", payDate: "10-10-24", total: 323}
+      ],
+      userProgress: {
+        courses: {
+          enrolled: ["Javascript Fundamentals", "Calculu-II"],
+          completed: ["Basic Urdu", "Expository Writing"]
+        },
+        streakDays: 6,
+        level: "Silver",
+        quizInfo: {
+          totalQuizzes: 3,
+          avgScore: 33
+        }
+      }
     };
   });
 
@@ -21,6 +36,8 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('currentUser', JSON.stringify(user));
   }, [user]);
+
+  console.log(user);
 
   return (
     <BrowserRouter>

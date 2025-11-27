@@ -5,7 +5,7 @@ import Subscriptions from './Subscriptions';
 import './Billing.css';
 import { useState } from "react";
 
-export default function Billing ({user_sub, user_payments, handleUser}) {
+export default function Billing ({user_sub, user_payments, handleUser, orderHistory}) {
     const [subscriptions, setSubscriptions] = useState([
         {
             id: 1,
@@ -67,6 +67,8 @@ export default function Billing ({user_sub, user_payments, handleUser}) {
         handleUser(u => u.currentSub = "");
     };
 
+    console.log(orderHistory);
+
     return (
         <>
         <div className="screen">
@@ -79,7 +81,7 @@ export default function Billing ({user_sub, user_payments, handleUser}) {
              <div className="flex flex-col py-4 px-8 bg-gray-50 rounded-xl shadow-md">
                 <MembreshipBox sub={user_sub} all_subs={subscriptions} />
                 <div className="h-0.5 bg-gray-300 w-full rounded-full my-4"></div>
-                <OrderHistory />
+                <OrderHistory allOrders={orderHistory} />
                 <div className="h-0.5 bg-gray-300 w-full rounded-full my-4"></div>
                 <PaymentMethod pays={user_payments} handlePay={handleUser} />
              </div>
