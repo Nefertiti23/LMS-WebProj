@@ -23,10 +23,10 @@
   min-width: 0; /* important for text ellipsis */
 }
 
-.username {
+/* .username {
   font-size: 0.9rem;
   color: #374151;
-  white-space: nowrap; /* prevent wrapping */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 150px; 
@@ -34,7 +34,7 @@
 
 .username-name {
   font-weight: 600;
-}
+} */
 
 .logout-btn {
   padding: 6px 12px;

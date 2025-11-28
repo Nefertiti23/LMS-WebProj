@@ -37,7 +37,7 @@
   padding: 10px;
   background-color: var(--primary);
   color: white;
-  font-weight: 600;
+  font-weight: lighter;
   border-radius: 6px;
   border: none;
   cursor: pointer;
@@ -63,7 +63,7 @@
   background-color: var(--primary);
   color: white;
   border: none;
-  font-weight: 600;
+  font-weight: normal;
   cursor: pointer;
 }
 
