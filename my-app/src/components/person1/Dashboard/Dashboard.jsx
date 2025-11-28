@@ -2,10 +2,10 @@ import SideNav from '../../person4/navbar/Navbar';
 import TopNav from './TopNav';
 import './Dashboard.css';
 
-export default function Dashboard() {
-  const user = JSON.parse(localStorage.getItem('loggedInUser'));
+export default function Dashboard({a_user}) {
+  // const user = JSON.parse(localStorage.getItem('loggedInUser'));
 
-  if (!user) return <p>Please log in</p>;
+  // if (!user) return <p>Please log in</p>;
 
   const dummyCourses = [
     { id: 1, title: "React Basics", description: "Learn React from scratch", image: "/images/react.png" },
@@ -16,10 +16,9 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-wrapper">
-      <SideNav />
       <div className="dashboard-content">
         <TopNav />
-        <p className="username">Hello, <span className="username-name">{user.username}</span></p>
+        <p className="username">Hello, <span className="username-name">{a_user.username}</span></p>
         <div className="courses-container">
           {dummyCourses.map(course => (
             <div key={course.id} className="course-card">

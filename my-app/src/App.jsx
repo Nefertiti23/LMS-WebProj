@@ -1,5 +1,4 @@
 import { BrowserRouter } from 'react-router-dom';
-import SideNav from './components/person4/navbar/Navbar';
 import Router from './components/person4/Router';
 import { useState, useEffect } from 'react';
 
@@ -9,7 +8,7 @@ export default function App() {
     var saved = localStorage.getItem('currentUser');
     return saved ? JSON.parse(saved) : {
       email: 'JohnnyDoe@reve.com',
-      username: 'John Doe',
+      username: 'Johnny',
       password: 'password123',
       role: 'user',
       joinDate: '10-10-23',
@@ -21,7 +20,7 @@ export default function App() {
       ],
       userProgress: {
         courses: {
-          enrolled: ["Javascript Fundamentals", "Calculu-II"],
+          enrolled: ["Javascript Fundamentals", "Calculus-II"],
           completed: ["Basic Urdu", "Expository Writing"]
         },
         streakDays: 6,

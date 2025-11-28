@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AccountInfo from './accountinfo/AccountInfo';
 import Profile from './profile/Profile';
@@ -16,7 +15,7 @@ export default function Router({ user, userHandler }) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login theuser={user} />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/dashboard" element={
         <div className='h-screen flex'>

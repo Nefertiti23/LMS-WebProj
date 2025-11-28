@@ -1,40 +1,44 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
-export default function Login() {
+export default function Login({theuser}) {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = () => {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const user = users.find(u => u.username === username);
+  // const [error, setError] = useState('');
 
-    if (!user) {
+  const handleLogin = () => {
+    var inputname = document.getElementById('inputname').value;
+    var inputpass = document.getElementById('inputpass').value;
+
+    if (theuser.username !== inputname) {
       setError("User does not exist.");
       return;
     }
 
-    if (user.password !== password) {
+    else if (theuser.password !== inputpass) {
       setError("Incorrect password");
       return;
+    }
+
+    else {
+      navigate("/dashboard");
     }
 
     setError('');
 
     // Save logged-in user
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
+    // localStorage.setItem("loggedInUser", JSON.stringify(user));
 
     // Navigate based on role
-    if (user.role === "admin") {
-      navigate("/admin-dashboard");
-    } else if (user.role === "teacher") {
-      navigate("/teacher-dashboard");
-    } else {
-      navigate("/dashboard");
-    }
+    // if (user.role === "admin") {
+    //   navigate("/admin-dashboard");
+    // } else if (user.role === "teacher") {
+    //   navigate("/teacher-dashboard");
+    // } else {
+    //   navigate("/dashboard");
+    // }
   };
 
   return (
@@ -43,24 +47,18 @@ export default function Login() {
 
       <div>
         <label>Username</label>
-        <input 
-          type="text" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)} 
+        <input id="inputname"
+          type="text"
         />
       </div>
 
       <div>
         <label>Password</label>
-        <input 
-          type="password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
+        <input id="inputpass"
+          type="password"
         />
       </div>
-
-      {error && <p className="error">{error}</p>}
-
+      {<p>{error}</p>}
       <button onClick={handleLogin}>Login</button>
 
       <Link to="/signup">
