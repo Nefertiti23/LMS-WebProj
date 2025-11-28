@@ -1,15 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
+// person 1
+import Home from '../person1/Home/Home';
+import Login from '../person1/Login/Login';
+import SideNav from './navbar/Navbar';
+import Signup from '../person1/Signup/Signup';
+import Dashboard from '../person1/Dashboard/Dashboard';
+// person 2
 import AccountInfo from './accountinfo/AccountInfo';
 import Profile from './profile/Profile';
 import Billing from './billing/Billing';
 import ProgressReports from './progressreps/ProgressReps';
 import Certificates from './certificates/Certificates';
 import Notificatins from './notifications/Notifications';
-import Home from '../person1/Home/Home';
-import Login from '../person1/Login/Login';
-import SideNav from './navbar/Navbar';
-import Signup from '../person1/Signup/Signup';
-import Dashboard from '../person1/Dashboard/Dashboard';
 
 export default function Router({ user, userHandler }) {
   return (
