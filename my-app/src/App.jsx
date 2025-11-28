@@ -43,12 +43,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="flex h-screen">
-        <SideNav />
-        <div className="flex-1 overflow-auto">
-          <Router user={user} userHandler={setUser} />
-        </div>
-      </div>
+      <Router user={user} userHandler={setUser} />
     </BrowserRouter>
   );
 }
