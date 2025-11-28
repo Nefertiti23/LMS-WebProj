@@ -8,7 +8,7 @@ export default function AccountInfo ({a_user, handleUser}) {
     const [formImg, setImg] = useState(a_user.imageURL);
 
     useEffect(() => {
-        handleUser(theuser);
+        handleUser(u => ({...u, username: theuser.username}));
     }, [theuser]);
 
     useEffect(() => {
@@ -36,7 +36,6 @@ export default function AccountInfo ({a_user, handleUser}) {
             if (newEmail !== '' && checkIfEndsWithCom(newEmail)) {
                 setEmailInput(newEmail);
                 setUser(prevuser => {return {...prevuser, email: newEmail}});
-                alert("Email successfully changed!");
                 document.getElementById('emailAlert').textContent = '';
                 resetNameForm();
             }
@@ -47,7 +46,7 @@ export default function AccountInfo ({a_user, handleUser}) {
 
         if (newName !== '' && newName !== nameInput) {
             setNameInput(newName);
-            setUser(prevuser => {return {...prevuser, name: newName}});
+            setUser(prevuser => {return {...prevuser, username: newName}});
             resetNameForm();
         }
     }

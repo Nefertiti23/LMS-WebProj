@@ -10,7 +10,7 @@ export default function Billing ({user_sub, user_payments, handleUser, orderHist
         {
             id: 1,
             name: 'Basic Plan',
-            price: '0.00 PKR',
+            price: '0.00',
             duration: '/month',
             features: ['Enroll in three courses', 'Two bonuses per month'],
             desc: [
@@ -23,7 +23,7 @@ export default function Billing ({user_sub, user_payments, handleUser, orderHist
         {
             id: 2,
             name: 'Pro Plan',
-            price: '1455.00 PKR',
+            price: '1455.00',
             duration: '/month',
             features: ['Enroll in unlimited courses', 'Five bonuses per month', 'Access to quizzes section'],
             desc: [
@@ -36,7 +36,7 @@ export default function Billing ({user_sub, user_payments, handleUser, orderHist
         {
             id: 3,
             name: 'Enterprise Plan',
-            price: '2333.00 PKR',
+            price: '2333.00',
             duration: '/month',
             features: ['All features', 'Priority support', 'Up to ten bonuses per month'],
             desc: [

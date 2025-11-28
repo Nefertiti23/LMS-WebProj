@@ -17,7 +17,7 @@ export default function Subscriptions({handleCancel, handleSubscribe, subs}) {
             <h2 className="text-2xl font-bold mb-4 text-gray-800">{plan.name}</h2>
             
             <div className="mb-6">
-              <span className="text-4xl font-bold text-indigo-800">{plan.price}</span>
+              <span className="text-4xl font-bold text-indigo-800">PKR {plan.price}</span>
               <span className="text-gray-500 text-sm">{plan.duration}</span>
             </div>
             

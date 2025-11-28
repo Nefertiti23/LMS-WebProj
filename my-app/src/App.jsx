@@ -8,9 +8,11 @@ export default function App() {
   const [user, setUser] = useState(() => {
     var saved = localStorage.getItem('currentUser');
     return saved ? JSON.parse(saved) : {
-      email: 'default@example.com',
-      username: 'default username',
+      email: 'JohnnyDoe@reve.com',
+      username: 'John Doe',
       password: 'password123',
+      role: 'user',
+      joinDate: '10-10-23',
       imageURL: '/vite.svg',
       billingInfo: ["Visa", "PayPal"],
       currentSub: "Basic Plan",
