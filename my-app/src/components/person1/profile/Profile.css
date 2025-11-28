@@ -26,7 +26,7 @@
 }
 
 .profileCard button:hover {
-    background-color: var(--secondaryLight);
+    background-color: var(--primary-2);
 }
 
 .imagebox img {

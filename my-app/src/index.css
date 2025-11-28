@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  /* Your color palette */
+/* :root {
   --primary: #3b82f6;
   --secondary: #8b5cf6;
   --background: #f3efec;
@@ -12,7 +11,29 @@
   --lightButtonHover: #f2f5fe;
   --inputOutline: #dcdae1;
   --textLighter: #becbda;
+} */
+
+:root {
+  /* Your color palette */
+  --primary: #3c6e71ff;
+  --secondary: #EA7317;
+  --background: #efefef;
+  --text: #1f2937;
+
+  --secondary-200: #fff6efab;
+  --primary-200: #30595b;
+  --primary-2: #30595b10;
+  --primaryButtonHover: #3474da;
+  --lightButtonHover: #f2f5fe;
+  --inputOutline: #dcdae1;
+  --textLighter: #becbda;
 }
+
+/* --stormy-teal: #3c6e71ff;
+--white: #ffffffff;
+--alabaster-grey: #d9d9d9ff;
+--smoky-rose: #a26769ff;
+--yale-blue: #284b63ff; */
 
 body {
   margin: 0;

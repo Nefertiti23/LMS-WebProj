@@ -7,7 +7,7 @@ import Signup from '../person1/Signup/Signup';
 import Dashboard from '../person1/Dashboard/Dashboard';
 // person 2
 import AccountInfo from './accountinfo/AccountInfo';
-import Profile from './profile/Profile';
+import Profile from '../person1/profile/Profile';
 import Billing from './billing/Billing';
 import ProgressReports from './progressreps/ProgressReps';
 import Certificates from './certificates/Certificates';
