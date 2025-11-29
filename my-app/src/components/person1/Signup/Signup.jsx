@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Signup.css';
 
-export default function Signup() {
+export default function Signup({handleUser, allusers, handleUsers}) {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -10,8 +10,6 @@ export default function Signup() {
   const [role, setRole] = useState('user');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-
-  const users = JSON.parse(localStorage.getItem('users')) || [];
 
   const handleSignup = () => {
     if (!username || !email || !password) {
@@ -26,21 +24,42 @@ export default function Signup() {
       return;
     }
 
-    const userExists = users.find(u => u.username === username);
+    const userExists = allusers.find(u => u.username === username);
     if (userExists) {
       setError("Username already exists");
       setSuccess('');
       return;
     }
 
-    const newUser = { username, email, password, role };
-    users.push(newUser);
-    localStorage.setItem('users', JSON.stringify(users));
+    const newUser = { 
+      username, 
+      email, 
+      password, 
+      role,
+      imageURL: '/vite.svg',
+      billingInfo: ["Visa", "PayPal"],
+      currentSub: "Basic Plan",
+      orders: [],
+      userProgress: {
+        courses: {
+          enrolled: [],
+          completed: []
+        },
+        streakDays: 0,
+        level: "Bronze",
+        quizInfo: {
+          totalQuizzes: 0,
+          avgScore: 0
+        }
+      }
+    };
 
+    handleUsers([...allusers, newUser]);
+    handleUser(newUser);
     setSuccess("Account created successfully! Redirecting to login...");
     setError('');
 
-    setTimeout(() => navigate('/login'), 2000);
+    setTimeout(() => navigate('/login'), 3000);
   };
 
   return (

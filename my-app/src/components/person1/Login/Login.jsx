@@ -3,10 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 
 export default function Login({theuser}) {
+  console.log(theuser)
   const navigate = useNavigate();
   const [error, setError] = useState('');
-
-  // const [error, setError] = useState('');
 
   const handleLogin = () => {
     var inputname = document.getElementById('inputname').value;

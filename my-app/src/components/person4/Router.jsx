@@ -13,12 +13,14 @@ import ProgressReports from './progressreps/ProgressReps';
 import Certificates from './certificates/Certificates';
 import Notificatins from './notifications/Notifications';
 
-export default function Router({ user, userHandler }) {
+export default function Router({ user, userHandler, userArr, setUserArr }) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login theuser={user} />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/signup" element={<Signup handleUser={userHandler} 
+      allusers={userArr} 
+      handleUsers={setUserArr} />} />
       <Route path="/dashboard" element={
         <div className='h-screen flex'>
         <SideNav />
