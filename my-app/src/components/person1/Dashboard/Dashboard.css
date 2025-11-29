@@ -6,23 +6,53 @@
 
 .dashboard-content {
   flex: 1;
+  padding: 20px 30px;
+  overflow-y: auto;
+  background: var(--background);
+}
+
+
+.section-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 20px 0 10px 0; 
+  color: var(--primary);
+}
+
+
+.profile-preview-container {
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.profile-preview-box {
+  width: 400px; 
+  padding: 35px; 
+  background: white;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  background-color: var(--background);
-  padding: 20px;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+.profile-preview-box .imagebox img {
+  width: 140px; 
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
 
-.username {
+.profile-preview-box .name {
+  font-weight: 700;
   font-size: 1.5rem;
-  color: #374151;
-  margin: 20px 10px;
+  margin-bottom: 6px;
 }
 
-.username-name {
-  font-weight: 600;
-  color: var(--primary);
+.profile-preview-box .joindate {
+  font-size: 1rem;
+  color: #6b7280;
 }
 
 
@@ -30,7 +60,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
+  justify-content: flex-start; 
 }
 
 .course-card {
@@ -39,24 +70,12 @@
   border-radius: 8px;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: 0.2s;
 }
 
 .course-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.course-title {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-
-.course-desc {
-  font-size: 0.875rem;
-  color: #6b7280;
+  transform: translateY(-4px);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.15);
 }
 
 .course-image {
@@ -65,4 +84,47 @@
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 10px;
+}
+
+.course-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.course-desc {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+
+.progress-section {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.progress-card {
+  width: 250px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.progress-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.15);
+}
+
+.progress-card .ofuser {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 5px;
 }

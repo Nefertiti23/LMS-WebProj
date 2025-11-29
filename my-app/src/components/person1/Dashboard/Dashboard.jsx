@@ -1,12 +1,9 @@
-import SideNav from '../../person4/navbar/Navbar';
-import TopNav from './TopNav';
-import './Dashboard.css';
+import React from "react";
+import TopNav from "./TopNav";
+import "./Dashboard.css";
+import Profile from "../profile/Profile";
 
-export default function Dashboard({a_user}) {
-  // const user = JSON.parse(localStorage.getItem('loggedInUser'));
-
-  // if (!user) return <p>Please log in</p>;
-
+export default function Dashboard({ a_user }) {
   const dummyCourses = [
     { id: 1, title: "React Basics", description: "Learn React from scratch", image: "/images/react.png" },
     { id: 2, title: "JavaScript Advanced", description: "Deep dive into JS", image: "/images/js.png" },
@@ -18,7 +15,15 @@ export default function Dashboard({a_user}) {
     <div className="dashboard-wrapper">
       <div className="dashboard-content">
         <TopNav />
-        <p className="username">Hello, <span className="username-name">{a_user.username}</span></p>
+
+        {/* PROFILE SECTION  */}
+        <h2 className="section-heading">Profile</h2>
+        <div className="profile-preview-container">
+          <Profile a_user={a_user} previewMode={true} />
+        </div>
+
+        {/* COURSES*/}
+        <h2 className="section-heading">Your Courses</h2>
         <div className="courses-container">
           {dummyCourses.map(course => (
             <div key={course.id} className="course-card">
@@ -27,6 +32,26 @@ export default function Dashboard({a_user}) {
               <p className="course-desc">{course.description}</p>
             </div>
           ))}
+        </div>
+
+       {/* Progress */}
+        <h2 className="section-heading">Your Progress</h2>
+        <div className="progress-section">
+          
+          <div className="progress-card">
+            <p className="ofuser">{a_user.userProgress.level}</p>
+            <p className="text-xs font-medium text-neutral-500">STATUS</p>
+          </div>
+
+          <div className="progress-card">
+            <p className="ofuser">{a_user.userProgress.courses.completed.length}</p>
+            <p className="text-xs font-medium text-neutral-500">COURSES COMPLETED</p>
+          </div>
+
+          <div className="progress-card">
+            <p className="ofuser">{a_user.userProgress.streakDays} days</p>
+            <p className="text-xs font-medium text-neutral-500">LONGEST RUNNING STREAK</p>
+          </div>
         </div>
       </div>
     </div>

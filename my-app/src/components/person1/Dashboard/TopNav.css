@@ -11,30 +11,21 @@
 }
 
 .logo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: var(--secondary); 
 }
 
 .user-section {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-width: 0; /* important for text ellipsis */
 }
-
-/* .username {
-  font-size: 0.9rem;
-  color: #374151;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 150px; 
-}
-
-.username-name {
-  font-weight: 600;
-} */
 
 .logout-btn {
   padding: 6px 12px;
@@ -44,7 +35,7 @@
   border: none;
   cursor: pointer;
   font-weight: 500;
-  flex-shrink: 0; 
+  transition: 0.2s;
 }
 
 .logout-btn:hover {

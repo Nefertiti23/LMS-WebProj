@@ -1,55 +1,67 @@
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
+import { Box, Typography } from '@mui/material';
+import SchoolIcon from '@mui/icons-material/School';
 
 export default function Home() {
   const navigate = useNavigate();
-
-  // Check if user is logged in
   const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
   const handleGoDashboard = () => {
-    if (loggedInUser) {
-      navigate('/dashboard');
-    } else {
-      navigate('/login');
-    }
+    if (loggedInUser) navigate('/dashboard');
+    else navigate('/login');
   };
 
-  const featuredCourses = [
-    { id: 1, title: "React Basics", image: "/images/react.png" },
-    { id: 2, title: "JavaScript Advanced", image: "/images/js.png" },
-    { id: 3, title: "HTML & CSS Mastery", image: "/images/htmlcss.png" },
-  ];
-
   return (
-    <div className="home-page">
-      <section className="hero">
-        <h1>Learn, Grow & Achieve!</h1>
-        <p>Join our LMS and boost your skills today.</p>
-        <button className="dashboard-btn" onClick={handleGoDashboard}>
+    <div className="new-home">
+
+      {/* NAVBAR */}
+      <nav className="home-nav">
+        <Box className="home-logo">
+          <SchoolIcon 
+            className="logo-icon"
+            sx={{ color: 'var(--pinkAccent)', fontSize: 40 }}
+          />
+          
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 700,
+              background: 'linear-gradient(90deg, var(--primary), var(--pinkAccent))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              letterSpacing: '2px',
+            }}
+          >
+            MIRF
+          </Typography>
+        </Box>
+
+        <button className="nav-btn" onClick={handleGoDashboard}>
           Go to Dashboard
         </button>
-      </section>
+      </nav>
 
-      <section className="featured-courses">
-        <h2>Featured Courses</h2>
-        <div className="courses-preview">
-          {featuredCourses.map(course => (
-            <div key={course.id} className="course-card">
-              <img src={course.image} alt={course.title} />
-              <h3>{course.title}</h3>
-            </div>
-          ))}
+      {/* HERO SECTION */}
+      <section className="hero-section">
+        <div className="hero-text">
+          <h1>
+            Start Learning <span>at Home</span>
+          </h1>
+          <p>Empower your journey with the MIRF LMS platform.</p>
+
+          <button className="hero-btn" onClick={handleGoDashboard}>
+            Go to Dashboard
+          </button>
+        </div>
+
+        <div className="hero-img">
+          <img src="/images/hero-illustration1.png" alt="Learning Illustration" />
         </div>
       </section>
 
       <footer className="footer">
-        <p>&copy; 2025 LMS Portal. All rights reserved.</p>
-        <div className="footer-links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Contact</a>
-        </div>
+        <p>© 2025 MIRF LMS. All rights reserved.</p>
       </footer>
     </div>
   );

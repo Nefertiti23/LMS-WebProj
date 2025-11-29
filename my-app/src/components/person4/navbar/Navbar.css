@@ -1,0 +1,29 @@
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 250px;
+  padding: 20px;
+  background-color:var(--navBar);
+  border-right: 1px solid #e5e5e5;
+}
+
+.side-nav .link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color:var(--textLighter);
+  transition: all 0.2s;
+}
+
+.side-nav .link:hover {
+  background-color: var(--primaryButtonHover);
+  /* color: #1d4ed8; */
+  font-weight: 600;
+}
+
+.side-nav .active-link {
+  background-color: #c7d2fe; 
+  color: #1e40af;
+  font-weight: 700;
+}
