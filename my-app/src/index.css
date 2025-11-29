@@ -9,7 +9,7 @@
   --secondaryLight: #f0edf6;
   --primaryButtonHover: #3474da;
   --lightButtonHover: #f2f5fe;
-  --inputOutline: #dcdae1;
+  --inputSecondary: #dcdae1;
   --textLighter: #becbda;
 } */
 
@@ -19,13 +19,16 @@
   --secondary: #EA7317;
   --background: #efefef;
   --text: #1f2937;
+  --navBar: #284b63ff;
 
   --secondary-200: #fff6efab;
+  --secondaryLight: #ffbb87;
   --primary-200: #30595b;
   --primary-2: #30595b10;
+  --navBar-dark: #1c3546;
   --primaryButtonHover: #3474da;
   --lightButtonHover: #f2f5fe;
-  --inputOutline: #dcdae1;
+  --inputSecondary: #e4e4e4;
   --textLighter: #becbda;
 }
 
@@ -62,6 +65,10 @@ html {
 }
 
 nav {
-  background-color: var(--text);
+  background-color: var(--navBar);
   color: var(--textLighter);
+}
+
+nav .link:hover {
+  background-color: var(--navBar-dark);
 }

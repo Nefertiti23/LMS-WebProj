@@ -96,12 +96,12 @@ form img:hover {
 }
 
 form input {
-    border: 1.5px solid var(--inputOutline);
+    border: 1.5px solid var(--inputSecondary);
     padding: 5px 10px;
 }
 
 form input:focus {
-    outline: 2px solid #bea7f4;
+    outline: 2px solid var(--secondaryLight);
     outline-offset: 1px;
     outline-width: 2px;
 }
