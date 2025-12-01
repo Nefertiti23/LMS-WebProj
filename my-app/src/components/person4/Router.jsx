@@ -12,6 +12,9 @@ import Billing from './billing/Billing';
 import ProgressReports from './progressreps/ProgressReps';
 import Certificates from './certificates/Certificates';
 import Notificatins from './notifications/Notifications';
+import CourseCatalog from '../person2/CourseCatalog/CourseCatalog';
+import CourseProgress from '../person2/CourseProgress/CourseProgress';
+import CourseEnrollment from '../person2/CourseEnrollment/CourseEnrollment';
 
 export default function Router({ user, userHandler, userArr, setUserArr }) {
   return (
@@ -34,6 +37,30 @@ export default function Router({ user, userHandler, userArr, setUserArr }) {
         <SideNav />
         <div className='flex-1 overflow-auto'>
           <Profile a_user={user} />
+        </div>
+        </div>
+        } />
+        <Route path="/enrollment" element={
+        <div className='h-screen flex'>
+        <SideNav />
+        <div className='flex-1 overflow-auto'>
+          <CourseEnrollment a_user={user} />
+        </div>
+        </div>
+        } />
+        <Route path="/catalog" element={
+        <div className='h-screen flex'>
+        <SideNav />
+        <div className='flex-1 overflow-auto'>
+          <CourseCatalog a_user={user} />
+        </div>
+        </div>
+        } />
+        <Route path="/progress" element={
+        <div className='h-screen flex'>
+        <SideNav />
+        <div className='flex-1 overflow-auto'>
+          <CourseProgress a_user={user} />
         </div>
         </div>
         } />

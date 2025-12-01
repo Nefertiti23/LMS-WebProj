@@ -1,5 +1,5 @@
  import React, { useState, useEffect } from "react";
-import { courses } from "./courses";
+import { courses } from "../courses";
 import "./CourseProgress.css";
 
 function CourseProgress() {

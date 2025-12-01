@@ -1,16 +1,4 @@
- :root {
-  --primary-bg: #ffffff;
-  --primary-border: #e0e0e0;
-  --primary-shadow: rgba(0, 0, 0, 0.1);
-  --primary-shadow-hover: rgba(0, 0, 0, 0.2);
 
-  --primary-text: #333;
-  --heading-text: #000;
-
-  --button-bg: #007bff;
-  --button-bg-hover: #000000;
-  --button-text: #ffffff;
-} 
 .course_catalog {
   display: flex;
   flex-wrap: wrap;
