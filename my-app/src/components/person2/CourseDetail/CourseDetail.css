@@ -1,0 +1,92 @@
+:root {
+  --primary-bg: #ffffff;
+  --primary-text: #1f2937;
+  --card-bg: #ffffff;
+  --card-border: #ddd;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: rgba(0, 0, 0, 0.2);
+  --accent: #3b82f6; /* your primary blue */
+}
+
+/* MAIN container */
+.course_detail_container {
+  padding: 40px;
+}
+
+/* HEADING centered */
+.course_detail_heading {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 25px;
+}
+
+/* Grid just like progress layout */
+.course_detail_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* COURSE CARD — SAME SIZE AS COURSE PROGRESS */
+.course_detail_card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  padding: 20px;
+  width: 280px;     /* SAME as Course Progress */
+  min-height: 220px; /* SAME height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course_detail_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--card-shadow-hover);
+}
+
+/* Title */
+.course_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Description */
+.course_description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Instructor + Price */
+.course_instructor,
+.course_price {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+/* Modules */
+.course_modules li {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  color: #333;
+}
+ .course_detail_container h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 30px;
+}

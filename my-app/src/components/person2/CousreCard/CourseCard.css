@@ -1,0 +1,95 @@
+/* ===========================
+      THEME VARIABLES
+=========================== */
+:root {
+  --primary: #000000;
+  --primary-dark: #0056b3;
+  --text-dark: #222;
+  --text-medium: #555;
+  --border-light: #ddd;
+  --divider: #eee;
+  --card-bg: #fff;
+  --shadow-light: rgba(0,0,0,0.1);
+  --shadow-dark: rgba(0,0,0,0.2);
+}
+
+/* ===========================
+      COURSE CARD
+=========================== */
+.course_card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-light);
+  padding: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.course_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow-dark);
+}
+
+/* ===========================
+      TEXT STYLES
+=========================== */
+.course_title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+
+.course_description {
+  font-size: 14px;
+  color: var(--text-medium);
+  line-height: 1.4;
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.course_instructor::before,
+.course_price::before {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.course_instructor::before {
+  content: "Instructor: ";
+}
+
+.course_price::before {
+  content: "Price: ";
+}
+
+.course_instructor,
+.course_price {
+  font-weight: 400;
+  color: var(--text-medium);
+  margin-left: 4px;
+}
+
+/* ===========================
+      BUTTON
+=========================== */
+.enroll_button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.enroll_button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}

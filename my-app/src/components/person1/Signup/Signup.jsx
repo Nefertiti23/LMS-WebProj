@@ -31,11 +31,13 @@ export default function Signup({handleUser, allusers, handleUsers}) {
       return;
     }
 
+    const current = new Date();
     const newUser = { 
       username, 
       email, 
       password, 
       role,
+      joinDate: `${current.getDate()}-${current.getMonth()+1}-${current.getFullYear()}`,
       imageURL: '/vite.svg',
       billingInfo: ["Visa", "PayPal"],
       currentSub: "Basic Plan",
