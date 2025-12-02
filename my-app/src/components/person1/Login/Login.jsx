@@ -2,35 +2,36 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-export default function Login({ theuser }) {
+export default function Login({ theuser, allusers, handleUser, handleUsers }) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
   const handleLogin = () => {
     const inputname = document.getElementById("inputname").value;
     const inputpass = document.getElementById("inputpass").value;
-
+    const foundUser = allusers.find(user => user.username === inputname);
     // Check username
-    if (theuser.username !== inputname) {
+    if (!foundUser) {
       setError("User does not exist.");
       return;
     }
 
     // Check password
-    if (theuser.password !== inputpass) {
+    if (foundUser.password !== inputpass) {
       setError("Incorrect password");
       return;
     }
 
     // SUCCESS → Now check the role
-    if (theuser.role === "admin") {
+    if (foundUser.role === "admin") {
       navigate("/admin-dashboard");
     } 
-    else if (theuser.role === "teacher") {
+    else if (foundUser.role === "teacher") {
       navigate("/teacher-dashboard");
     } 
     else {
-      navigate("/dashboard");  // Normal user
+      navigate("/dashboard");
+      handleUser(foundUser);
     }
 
     setError("");

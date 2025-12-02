@@ -19,8 +19,7 @@ export default function Router({ user, userHandler, userArr, setUserArr }) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login theuser={user} />} />
-      <Route path="/login" element={<Login theuser={user} />} />
+      <Route path="/login" element={<Login theuser={user} allusers={userArr} handleUser={userHandler} handleUsers={setUserArr} />} />
       <Route path="/admin-dashboard" element={<AdminDashboard theuser={user} />} />
 
       <Route path="/signup" element={<Signup handleUser={userHandler} 
