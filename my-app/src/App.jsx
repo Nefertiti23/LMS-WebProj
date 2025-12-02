@@ -20,9 +20,9 @@ export default function App() {
       userProgress: {
         courses: {
           enrolled: ["Javascript Fundamentals", "Calculus-II"],
-          completed: ["Basic Urdu", "Expository Writing"]
+          completed: ["Basic Urdu", "Expository Writing", "Random Course"]
         },
-        streakDays: 6,
+        streakDays: 7,
         level: "Silver",
         quizInfo: {
           totalQuizzes: 3,
@@ -52,7 +52,7 @@ export default function App() {
           enrolled: ["Javascript Fundamentals", "Calculus-II"],
           completed: ["Basic Urdu", "Expository Writing"]
         },
-        streakDays: 6,
+        streakDays: 7,
         level: "Silver",
         quizInfo: {
           totalQuizzes: 3,

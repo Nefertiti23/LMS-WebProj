@@ -1,19 +1,23 @@
 .topnav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 24px;
+  
+  padding: 0;
   background-color: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px #0000001a;
   position: sticky;
+  
   top: 0;
   z-index: 50;
+
+  border: 1px solid black;  
+  border-radius: 10px;
 }
 
 .logo {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  border: 1px solid black;
 }
 
 .logo-icon {
@@ -21,11 +25,13 @@
   color: var(--secondary); 
 }
 
-.user-section {
+/* .user-section {
   display: flex;
   align-items: center;
   gap: 12px;
-}
+
+  border: 1px solid black;
+} */
 
 .logout-btn {
   padding: 6px 12px;

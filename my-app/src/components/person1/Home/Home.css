@@ -8,10 +8,11 @@
 
 /* NAVBAR */
 .home-nav {
+  border-bottom: 2px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 14px 40px;
 }
 
 .home-logo {
@@ -21,14 +22,7 @@
 }
 
 .home-logo img {
-  width: 40px;
-}
-
-.home-logo h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--primary), var(--accentPink));
-  /* -webkit-text-fill-color: transparent; */
+  width: 40px;  
 }
 
 .nav-btn {
@@ -43,15 +37,14 @@
 }
 
 .nav-btn:hover {
-  background-color:#c26c88;;
+  background-color: var(--darkpinkAccent);
 }
 
 /* HERO SECTION */
 .hero-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 80px 40px;
 }
 
 .hero-text {
@@ -67,15 +60,8 @@
   color: var(--primary);
 }
 
-.hero-text p {
-  margin: 15px 0 30px;
-  font-size: 1.2rem;
-  color: #1f2937;
-}
-
 
 .hero-btn {
-  padding: 14px 30px;
   background: var(--pinkAccent); 
   border: none;
   color: white;
@@ -86,7 +72,7 @@
 }
 
 .hero-btn:hover {
-  background: #c26c88; 
+  background:  var(--darkpinkAccent); 
 }
 
 

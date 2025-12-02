@@ -25,13 +25,7 @@ export default function Home() {
           
           <Typography
             variant="h5"
-            sx={{
-              fontWeight: 700,
-              background: 'linear-gradient(90deg, var(--primary), var(--pinkAccent))',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              letterSpacing: '2px',
-            }}
+            sx={{color: 'white', fontWeight: 700}}
           >
             MIRF
           </Typography>
@@ -43,14 +37,14 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="hero-section">
-        <div className="hero-text">
+      <section className="hero-section mt-10">
+        <div className="hero-text flex flex-col h-100">
           <h1>
             Start Learning <span>at Home</span>
           </h1>
-          <p>Empower your journey with the MIRF LMS platform.</p>
+          <p className='my-1 text-xl text-gray-500'>Empower your journey with the MIRF LMS platform.</p>
 
-          <button className="hero-btn" onClick={handleGoDashboard}>
+          <button className="hero-btn w-1/3 px-2 py-3 mt-8" onClick={handleGoDashboard}>
             Go to Dashboard
           </button>
         </div>

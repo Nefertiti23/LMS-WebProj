@@ -16,13 +16,13 @@
 :root {
   /* Your color palette */
   --primary: #3c6e71ff;
-  --secondary: #EA7317;
+  --secondary: #ea3788;
   --background: #efefef;
   --text: #1f2937;
   --navBar: #284b63ff;
 
   --secondary-200: #fff6efab;
-  --secondaryLight: #ffbb87;
+  --secondaryLight: #ffcae2;
   --primary-200: #30595b;
   --primary-2: #30595b10;
   --navBar-dark: #1c3546;
@@ -30,7 +30,9 @@
   --lightButtonHover: #f2f5fe;
   --inputSecondary: #e4e4e4;
   --textLighter: #becbda;
-  --pinkAccent: #b78495;
+
+  --pinkAccent: #ea3788;
+  --darkpinkAccent: #c92f74;
 }
 
 /* --stormy-teal: #3c6e71ff;

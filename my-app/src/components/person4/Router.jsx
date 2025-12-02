@@ -5,8 +5,6 @@ import Login from '../person1/Login/Login';
 import SideNav from './navbar/Navbar';
 import Signup from '../person1/Signup/Signup';
 import Dashboard from '../person1/Dashboard/Dashboard';
-// person2
-import CourseCatalog from '../person2/CourseCatalog/CourseCatalog'
 // person 4
 import AccountInfo from './accountinfo/AccountInfo';
 import Profile from '../person1/profile/Profile';
