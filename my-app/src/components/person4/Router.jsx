@@ -5,7 +5,9 @@ import Login from '../person1/Login/Login';
 import SideNav from './navbar/Navbar';
 import Signup from '../person1/Signup/Signup';
 import Dashboard from '../person1/Dashboard/Dashboard';
-// person 2
+// person2
+import CourseCatalog from '../person2/CourseCatalog/CourseCatalog'
+// person 4
 import AccountInfo from './accountinfo/AccountInfo';
 import Profile from '../person1/profile/Profile';
 import Billing from './billing/Billing';
@@ -106,6 +108,14 @@ export default function Router({ user, userHandler, userArr, setUserArr }) {
         <SideNav />
         <div className='flex-1 overflow-auto'>
         <Notificatins  />
+        </div>
+        </div>
+        } />
+      <Route path="/courses" element={
+        <div className='h-screen flex'>
+        <SideNav />
+        <div className='flex-1 overflow-auto'>
+        <CourseCatalog  />
         </div>
         </div>
         } />

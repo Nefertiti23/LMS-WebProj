@@ -29,6 +29,9 @@ export default function SideNav() {
     { to: '/profile', label: 'Profile', icon: <PersonIcon /> },
     { to: '/accountinfo', label: 'Account', icon: <AccountBalanceIcon /> },
     { to: '/billing', label: 'Billing', icon: <PaymentIcon /> },
+    { to: '/progressreps', label: 'Progress', icon: <BarChartIcon /> },
+    { to: '/certificates', label: 'Certificates', icon: <EmojiEventsIcon /> },
+    { to: '/notifs', label: 'Notifications', icon: <NotificationsIcon /> },
   ];
 
   return (

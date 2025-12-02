@@ -1,7 +1,7 @@
  import React, { useState } from "react";
-import CourseCard from "../CousreCard/CourseCard";
-import SearchBar from "../SearchBar/SearchBar";
-import {courses} from "../courses"
+import CourseCard from "./CourseCard";
+import SearchBar from "./SearchBar";
+import { courses } from "./courses";
 import "./CourseCatalog.css";
 
 function CourseCatalog() {
