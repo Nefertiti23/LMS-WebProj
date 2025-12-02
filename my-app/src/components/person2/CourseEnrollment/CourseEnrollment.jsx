@@ -20,6 +20,7 @@ function CourseEnrollment() {
   return (
     <div className="enrollment">
       <h1>My Enrolled Courses</h1>
+
       <div className="enrolled_courses">
         {enrolledCourses.map((course) => (
           <div className="enrolled_card" key={course.course_id}>

@@ -11,7 +11,7 @@
   background: var(--background);
 }
 
-/* Section Title */
+/* TITLE */
 .section-heading {
   font-size: 1.8rem;
   font-weight: 600;
@@ -19,7 +19,23 @@
   color: var(--primary);
 }
 
-/* ---- PROFILE CARD ---- */
+/* PROFILE PREVIEW */
+/* .profile-preview-container {
+
+   width: 400px;  
+   margin-bottom: 25px;
+  display: flex;
+  padding: 35px;
+  background: white;
+
+  border-radius: 15px;
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 0 black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
 .profile-preview-container {
   margin-bottom: 25px;
   display: flex;
@@ -29,12 +45,10 @@
   width: 400px;
   padding: 35px;
   background: white;
-
   /* MUI-like design */
   border-radius: 15px;
   border: 2px solid #000;
   box-shadow: 3px 3px 0 0 black;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,78 +73,74 @@
   color: #6b7280;
 }
 
-/* ---- COURSE CARD ---- */
-.course-card {
-  width: 250px;
-  padding: 0;   /* Remove padding so image spans full width */
-  background-color: white;
 
-  /* MUI-like card style */
-  border-radius: 15px;
-  border: 2px solid #000;
-  box-shadow: 3px 3px 0 0 black;
-
-  overflow: hidden;
+.enrollment-preview-container {
   display: flex;
-  flex-direction: column;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.course-card:hover {
+.enrollment-preview-card {
+  width: 250px;
+  padding: 15px;
+  background: white;
+
+  border-radius: 15px;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0 0 black;
+
+  transition: 0.2s;
+}
+
+.enrollment-preview-card:hover {
   transform: translateY(-4px);
   box-shadow: 5px 5px 0 0 black;
 }
 
-.course-image {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-}
-
-.course-content {
-  padding: 15px;
-}
-
-.course-title {
-  font-weight: 600;
-  font-size: 1.1rem;
+.ep-title {
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
-.course-desc {
-  font-size: 0.875rem;
+.ep-desc {
+  font-size: 0.9rem;
   color: #6b7280;
-}
-.courses-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;        
-  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
+.ep-inst {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* SEE ALL BUTTON */
+.see-all-btn {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.see-all-btn:hover {
+  text-decoration: underline;
+}
 
 
-/* ---- PROGRESS CARDS ---- */
 .progress-section {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start;
 }
 
 .progress-card {
   width: 250px;
   padding: 15px;
-
   background-color: white;
-
-  /* MUI-like design */
   border-radius: 15px;
   border: 2px solid #000;
   box-shadow: 3px 3px 0 0 black;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,5 +155,4 @@
 .progress-card .ofuser {
   font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 5px;
 }

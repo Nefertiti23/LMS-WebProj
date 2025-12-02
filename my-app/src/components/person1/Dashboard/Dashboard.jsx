@@ -10,13 +10,12 @@ export default function Dashboard({ a_user }) {
 
   useEffect(() => {
     const enrolledIds = JSON.parse(localStorage.getItem("enrolled")) || [];
-
-    // Match enrolled IDs to real course objects
     const userCourses = courses.filter(c =>
       enrolledIds.includes(c.course_id)
     );
 
-    setEnrolledCourses(userCourses);
+    // Show only first 3 cards
+    setEnrolledCourses(userCourses.slice(0, 3));
   }, []);
 
   return (
@@ -30,23 +29,22 @@ export default function Dashboard({ a_user }) {
           <Profile a_user={a_user} previewMode={true} />
         </div>
 
-        {/* ENROLLED COURSES SECTION */}
+        {/* ENROLLED COURSES */}
         <div className="section-heading flex justify-between items-center">
           <h2>Your Enrolled Courses</h2>
 
-          {/* SEE ALL ENROLLMENTS BUTTON */}
           <Link to="/enrollment" className="see-all-btn">
             See All Enrollments →
           </Link>
         </div>
 
-        <div className="courses-container">
+        <div className="enrollment-preview-container">
           {enrolledCourses.length > 0 ? (
             enrolledCourses.map(course => (
-              <div key={course.course_id} className="course-card">
-                <h3 className="course-title">{course.title}</h3>
-                <p className="course-desc">{course.description}</p>
-                <p className="course-instructor">By: {course.instructor_name}</p>
+              <div key={course.course_id} className="enrollment-preview-card">
+                <h3 className="ep-title">{course.title}</h3>
+                <p className="ep-desc">{course.description}</p>
+                <p className="ep-inst">By: {course.instructor_name}</p>
               </div>
             ))
           ) : (
@@ -54,7 +52,7 @@ export default function Dashboard({ a_user }) {
           )}
         </div>
 
-        {/* PROGRESS SECTION */}
+        {/* PROGRESS */}
         <h2 className="section-heading">Your Progress</h2>
 
         <div className="progress-section">
