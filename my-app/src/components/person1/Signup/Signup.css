@@ -44,7 +44,7 @@
 }
 
 .signup-container button.create-btn:hover {
-  background-color: var(--primaryButtonHover);
+  background-color: var(--primary-200);
 }
 
 .signup-container p.error {

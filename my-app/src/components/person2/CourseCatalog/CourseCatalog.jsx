@@ -32,7 +32,8 @@ const matchesInstructor = instructorFilter
   });
 
   return (
-    <div>
+    <div className="screen">
+      <h3 className='font-semibold text-3xl'>Course Catalog</h3>
       <SearchBar
         search={searchTerm}  setSearch={setSearchTerm}
         instructorFilter={instructorFilter}  setInstructorFilter={setInstructorFilter}
@@ -40,16 +41,16 @@ const matchesInstructor = instructorFilter
       />
 
       <div className="course_catalog">
-  {filteredCourses.map((course) => (
-    <CourseCard
-      key={course.course_id}
-      course={course}
-      onEnroll={handleEnrollment} // Correct prop name
-    />
-  ))}
-</div>
+        {filteredCourses.map((course) => (
+          <CourseCard
+            key={course.course_id}
+            course={course}
+            onEnroll={handleEnrollment} // Correct prop name
+          />
+        ))}
+      </div>
       {filteredCourses.length === 0 && 
-      <p>No courses have matched your search.</p>}
+      <p className="my-10 text-center text-xl">No courses have matched your search.</p>}
     </div>
   );
 }

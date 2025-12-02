@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import TopNav from "./TopNav";
 import "./Dashboard.css";
 import Profile from "../profile/Profile";
 import { courses } from "../../person2/courses";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 export default function Dashboard({ a_user }) {
+  const navigate = useNavigate();
   const [enrolledCourses, setEnrolledCourses] = useState([]);
 
   useEffect(() => {
@@ -18,27 +20,26 @@ export default function Dashboard({ a_user }) {
     setEnrolledCourses(userCourses.slice(0, 3));
   }, []);
 
+  const goToEnrollment = () => {
+    navigate('/enrollment');
+  }
+
   return (
     <div className="dashboard-wrapper">
       <div className="dashboard-content">
         <TopNav />
-
-        {/* PROFILE SECTION */}
-        <h2 className="section-heading">Profile</h2>
-        <div className="profile-preview-container">
+        <h2 className="section-heading px-5">Profile</h2>
+        <div className="profile-preview-container px-5">
           <Profile a_user={a_user} previewMode={true} />
         </div>
 
         {/* ENROLLED COURSES */}
-        <div className="section-heading flex justify-between items-center">
+        <div className="section-heading flex gap-8 items-center px-5">
           <h2>Your Enrolled Courses</h2>
-
-          <Link to="/enrollment" className="see-all-btn">
-            See All Enrollments →
-          </Link>
+          <Button variant="outlined" color={'var(--primary)'} sx={{borderWidth: '1.5px', borderRadius: '50px'}} onClick={goToEnrollment}>See All Enrollments →</Button>
         </div>
 
-        <div className="enrollment-preview-container">
+        <div className="enrollment-preview-container px-5">
           {enrolledCourses.length > 0 ? (
             enrolledCourses.map(course => (
               <div key={course.course_id} className="enrollment-preview-card">
@@ -53,9 +54,9 @@ export default function Dashboard({ a_user }) {
         </div>
 
         {/* PROGRESS */}
-        <h2 className="section-heading">Your Progress</h2>
+        <h2 className="section-heading px-5">Your Progress</h2>
 
-        <div className="progress-section">
+        <div className="progress-section px-5">
           <div className="progress-card">
             <p className="ofuser">{a_user.userProgress.level}</p>
             <p className="text-xs font-medium text-neutral-500">STATUS</p>
@@ -70,7 +71,7 @@ export default function Dashboard({ a_user }) {
             </p>
           </div>
 
-          <div className="progress-card">
+          <div className="progress-card px-5">
             <p className="ofuser">{a_user.userProgress.streakDays} days</p>
             <p className="text-xs font-medium text-neutral-500">
               LONGEST RUNNING STREAK

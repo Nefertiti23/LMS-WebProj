@@ -12,6 +12,10 @@ export default function Home() {
     else navigate('/login');
   };
 
+  const goToCreate = () => {
+    navigate('/signup');
+  };
+
   return (
     <div className="new-home">
 
@@ -44,8 +48,8 @@ export default function Home() {
           </h1>
           <p className='my-1 text-xl text-gray-500'>Empower your journey with the MIRF LMS platform.</p>
 
-          <button className="hero-btn w-1/3 px-2 py-3 mt-8" onClick={handleGoDashboard}>
-            Go to Dashboard
+          <button className="hero-btn w-1/3 px-2 py-3 mt-8" onClick={goToCreate}>
+            Start Learning
           </button>
         </div>
 

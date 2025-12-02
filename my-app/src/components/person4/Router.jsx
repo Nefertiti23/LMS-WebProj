@@ -7,13 +7,11 @@ import Signup from '../person1/Signup/Signup';
 import Dashboard from '../person1/Dashboard/Dashboard';
 // person 4
 import AccountInfo from './accountinfo/AccountInfo';
-import Profile from '../person1/profile/Profile';
 import Billing from './billing/Billing';
 import ProgressReports from './progressreps/ProgressReps';
 import Certificates from './certificates/Certificates';
 import Notificatins from './notifications/Notifications';
 import CourseCatalog from '../person2/CourseCatalog/CourseCatalog';
-import CourseProgress from '../person2/CourseProgress/CourseProgress';
 import CourseEnrollment from '../person2/CourseEnrollment/CourseEnrollment';
 
 export default function Router({ user, userHandler, userArr, setUserArr }) {
@@ -32,14 +30,6 @@ export default function Router({ user, userHandler, userArr, setUserArr }) {
         </div>
         </div>
       } />
-      <Route path="/profile" element={
-        <div className='h-screen flex'>
-        <SideNav />
-        <div className='flex-1 overflow-auto'>
-          <Profile a_user={user} />
-        </div>
-        </div>
-        } />
         <Route path="/enrollment" element={
         <div className='h-screen flex'>
         <SideNav />
@@ -53,14 +43,6 @@ export default function Router({ user, userHandler, userArr, setUserArr }) {
         <SideNav />
         <div className='flex-1 overflow-auto'>
           <CourseCatalog a_user={user} />
-        </div>
-        </div>
-        } />
-        <Route path="/progress" element={
-        <div className='h-screen flex'>
-        <SideNav />
-        <div className='flex-1 overflow-auto'>
-          <CourseProgress a_user={user} />
         </div>
         </div>
         } />
