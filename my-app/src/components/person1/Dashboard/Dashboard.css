@@ -26,7 +26,7 @@
 }
 
 .profile-preview-box {
-  width: 400px;
+  width: 100%;
   padding: 35px;
   background: white;
   border-radius: 15px;
@@ -38,8 +38,9 @@
 }
 
 .profile-preview-box .imagebox img {
-  width: 140px;
-  height: 140px;
+  border: 1.5px solid black;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;

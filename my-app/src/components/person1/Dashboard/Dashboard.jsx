@@ -27,7 +27,6 @@ export default function Dashboard({ a_user }) {
   return (
     <div className="dashboard-wrapper">
       <div className="dashboard-content">
-        <TopNav />
         <h2 className="section-heading px-5">Profile</h2>
         <div className="profile-preview-container px-5">
           <Profile a_user={a_user} previewMode={true} />
