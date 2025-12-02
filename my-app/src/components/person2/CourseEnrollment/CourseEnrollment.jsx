@@ -39,7 +39,7 @@ function CourseEnrollment() {
               <h3>{course.title}</h3>
               <p>{course.description}</p>
               <p>Instructor: {course.instructor_name}</p>
-              <p className="font-bold text-(--primary)!">Price: Rs {course.price}</p>
+              {/* <p className="font-bold text-(--primary)!">Price: Rs {course.price}</p> */}
               <LinearDeterminate />
               <p className="text-sm">3/6 quizzes completed</p>
             </div>
