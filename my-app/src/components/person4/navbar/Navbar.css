@@ -1,9 +1,9 @@
 .side-nav {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: space-evenly;
   width: 250px;
-  padding: 20px;
+  padding: 40px 30px;
   background-color: var(--navBar);
   color: var(--textLighter);
 }
@@ -15,7 +15,7 @@
 }
 
 .section-title {
-  margin-top: 25px;
+  margin-top: 8px;
   margin-bottom: 8px;
   font-size: 12px;
   letter-spacing: 1px;
