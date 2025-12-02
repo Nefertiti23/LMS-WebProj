@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './Signup.css';
 
 export default function Signup({handleUser, allusers, handleUsers}) {
+  console.log(allusers);
+
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -88,7 +90,6 @@ export default function Signup({handleUser, allusers, handleUsers}) {
         <select value={role} onChange={e => setRole(e.target.value)}>
           <option value="user">User</option>
           <option value="teacher">Teacher</option>
-          <option value="admin">Admin</option>
         </select>
       </div>
 

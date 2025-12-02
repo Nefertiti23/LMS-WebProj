@@ -1,6 +1,6 @@
 // src/components/LessonViewer.jsx
-import React from "react";
 import { Box, Typography, List, ListItem, ListItemText } from "@mui/material";
+import './Lessonviewer.css'
 
 const LessonViewer = ({ course }) => {
   if (!course) {
@@ -17,8 +17,8 @@ const LessonViewer = ({ course }) => {
         {course.modules.map((mod, index) => (
           <ListItem key={index} sx={{ borderBottom: "1px solid #eee" }}>
             <ListItemText
-              primary={mod.title} // ✅ FIXED
-              secondary={`Video: ${mod.video}`} // just text, SAFE
+              primary={mod.title}
+              secondary={`Video: ${mod.video}`}
             />
           </ListItem>
         ))}

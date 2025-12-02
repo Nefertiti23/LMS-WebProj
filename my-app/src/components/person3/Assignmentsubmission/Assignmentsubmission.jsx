@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 
 const AssignmentSubmission = () => {
@@ -6,7 +6,7 @@ const AssignmentSubmission = () => {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <Box mt={2} p={2} border="1px solid #ccc" borderRadius={2}>
+    <Box sx={{ mt: 2, p: 2, border: '1px solid #ccc', borderRadius: 2 }}>
       <Typography variant="h6">Assignment Submission</Typography>
       <input type="file" onChange={(e) => setFile(e.target.files[0])} />
       <Button
@@ -15,12 +15,12 @@ const AssignmentSubmission = () => {
         onClick={() => {
           if (file) setSubmitted(true);
         }}
-        sx={{ ml: 2 }}
+        sx={{ ml: 2, mt: 1 }}
       >
         Submit
       </Button>
       {submitted && (
-        <Typography color="green" mt={1}>
+        <Typography sx={{ color: 'green', mt: 1 }}>
           Submitted successfully!
         </Typography>
       )}

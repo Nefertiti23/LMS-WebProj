@@ -9,7 +9,14 @@ export default function Login({ theuser, allusers, handleUser, handleUsers }) {
   const handleLogin = () => {
     const inputname = document.getElementById("inputname").value;
     const inputpass = document.getElementById("inputpass").value;
+
+    if (!allusers || allusers.length === 0) {
+      setError("User database not loaded");
+      return;
+    }
+
     const foundUser = allusers.find(user => user.username === inputname);
+
     // Check username
     if (!foundUser) {
       setError("User does not exist.");
@@ -22,7 +29,9 @@ export default function Login({ theuser, allusers, handleUser, handleUsers }) {
       return;
     }
 
-    // SUCCESS → Now check the role
+    setError("");
+    handleUser(foundUser);
+
     if (foundUser.role === "admin") {
       navigate("/admin-dashboard");
     } 
@@ -31,10 +40,7 @@ export default function Login({ theuser, allusers, handleUser, handleUsers }) {
     } 
     else {
       navigate("/dashboard");
-      handleUser(foundUser);
     }
-
-    setError("");
   };
 
   return (

@@ -29,8 +29,14 @@ export default function App() {
           avgScore: 33
         }
       }
-    }
-    ];
+    }, 
+    {
+      email: 'jonathan@reve.com',
+      username: 'Jon',
+      password: 'password123',
+      role: 'admin',
+      joinDate: '10-10-23'
+    }];
   });
 
   const [currentuser, setCurrentUser] = useState(() => {
@@ -66,6 +72,10 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('currentUser', JSON.stringify(currentuser));
   }, [currentuser]);
+
+  useEffect(() => {
+    localStorage.setItem('allUsers', JSON.stringify(allUsers));
+  }, [allUsers]);
 
   console.log(allUsers);
 

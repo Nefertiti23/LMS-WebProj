@@ -2,10 +2,9 @@ import SideNavBar from './SideNavBar';
 import './Teacher-dashboard.css';
 import TopNav from '../Dashboard/TopNav';
 
-export default function TeacherDashboard() {
-  const user = JSON.parse(localStorage.getItem('loggedInUser'));
+export default function TeacherDashboard({currentUser}) {
 
-  if (!user) return <p>Please log in</p>;
+  if (!currentUser) return <p className='text-center my-20 text-md'>Please log in</p>;
 
   const dummyTeachingCourses = [
     { id: 1, title: "React Basics", students: 25 },
@@ -19,7 +18,7 @@ export default function TeacherDashboard() {
       <div className="teacher-dashboard-content">
         <TopNav />
         <p className="username">
-          Hello, <span className="username-name">{user.username}</span> (Teacher)
+          Hello, <span className="username-name">{currentUser.username}</span> (Teacher)
         </p>
 
         <section className="teaching-courses">

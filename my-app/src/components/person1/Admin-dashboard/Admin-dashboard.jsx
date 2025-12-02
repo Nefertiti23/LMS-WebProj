@@ -3,26 +3,21 @@ import TopNav from '../Dashboard/TopNav';
 import './admin-dashboard.css';
 import { courses } from '../../person2/courses'; // import courses
 
-export default function AdminDashboard() {
-  // Get logged-in user from localStorage
-  const user = JSON.parse(localStorage.getItem('loggedInUser'));
-
-  // Get all users from localStorage
-  const allUsers = JSON.parse(localStorage.getItem('allUsers')) || [];
-
+export default function AdminDashboard({theuser, allusers}) {
+  console.log(allusers);
   // Stats
-  const totalUsers = allUsers.length;
+  const totalUsers = allusers.length;
   const totalCourses = courses.length;
-  const totalTeachers = allUsers.filter(u => u.role === 'Teacher').length;
+  const totalTeachers = allusers.filter(u => u.role === 'teacher').length;
 
   return (
     <div className="admin-dashboard-wrapper">
       <SideNav />
       <div className="admin-dashboard-content-wrapper">
-        <TopNav user={user} />
+        <TopNav user={theuser} />
 
         <div className="admin-dashboard-content">
-          <h2>Hello, {user?.username || "Admin"} (Admin)</h2>
+          <h2>Hello, {theuser?.username || "Admin"} (Admin)</h2>
 
           <div className="cards-container">
             <div className="card">
@@ -49,7 +44,7 @@ export default function AdminDashboard() {
               </tr>
             </thead>
             <tbody>
-              {allUsers.map((u, index) => (
+              {allusers.map((u, index) => (
                 <tr key={index}>
                   <td>{u.username}</td>
                   <td>{u.role}</td>

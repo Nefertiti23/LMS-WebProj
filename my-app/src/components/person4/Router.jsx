@@ -5,22 +5,29 @@ import Login from '../person1/Login/Login';
 import SideNav from './navbar/Navbar';
 import Signup from '../person1/Signup/Signup';
 import Dashboard from '../person1/Dashboard/Dashboard';
+import TeacherDashboard from '../person1/Teacher-dashboard/Teacher-dashboard';
+import AdminDashboard from '../person1/Admin-dashboard/Admin-dashboard';
+// person 2
+import CourseCatalog from '../person2/CourseCatalog/CourseCatalog';
+import CourseEnrollment from '../person2/CourseEnrollment/CourseEnrollment';
+// person 3
+import LessonViewer from '../person3/Lessonviewer/Lessonviewer';
+import Quizinterface from '../person3/Quizinterface/Quizinterface';
 // person 4
 import AccountInfo from './accountinfo/AccountInfo';
 import Billing from './billing/Billing';
 import ProgressReports from './progressreps/ProgressReps';
 import Certificates from './certificates/Certificates';
 import Notificatins from './notifications/Notifications';
-import CourseCatalog from '../person2/CourseCatalog/CourseCatalog';
-import CourseEnrollment from '../person2/CourseEnrollment/CourseEnrollment';
-import AdminDashboard from '../person1/Admin-dashboard/Admin-dashboard';
 
 export default function Router({ user, userHandler, userArr, setUserArr }) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login theuser={user} allusers={userArr} handleUser={userHandler} handleUsers={setUserArr} />} />
-      <Route path="/admin-dashboard" element={<AdminDashboard theuser={user} />} />
+      <Route path="/login" element={<Login theuser={user} allusers={userArr} 
+      handleUser={userHandler} handleUsers={setUserArr} />} />
+      <Route path="/admin-dashboard" element={<AdminDashboard theuser={user} allusers={userArr} />} />
+      <Route path="/teacher-dashboard" element={<TeacherDashboard currentUser={user} />} />
 
       <Route path="/signup" element={<Signup handleUser={userHandler} 
       allusers={userArr} 
@@ -82,7 +89,7 @@ export default function Router({ user, userHandler, userArr, setUserArr }) {
         <div className='h-screen flex'>
         <SideNav />
         <div className='flex-1 overflow-auto'>
-        <Certificates completedCourses={user.userProgress.courses.completed} />
+        <Certificates completedCourses={user.userProgress?.courses.completed} />
         </div>
         </div>
         } />

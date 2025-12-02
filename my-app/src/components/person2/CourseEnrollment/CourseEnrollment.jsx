@@ -3,6 +3,7 @@ import { courses } from "../courses";
 import "./CourseEnrollment.css";
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
+import AssignmentSubmission from "../../person3/Assignmentsubmission/Assignmentsubmission";
 
 function LinearDeterminate() {
 
@@ -42,6 +43,7 @@ function CourseEnrollment() {
               {/* <p className="font-bold text-(--primary)!">Price: Rs {course.price}</p> */}
               <LinearDeterminate />
               <p className="text-sm">3/6 quizzes completed</p>
+              <AssignmentSubmission />
             </div>
           ))}
         </div>

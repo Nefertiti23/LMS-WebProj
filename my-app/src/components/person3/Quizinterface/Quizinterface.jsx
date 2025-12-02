@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React, { useState } from "react";
 import {
   Box,
@@ -12,7 +11,7 @@ import {
 const Quizinterface = ({ module }) => {
   const questions = [
     {
-      question: What is ${module?.title}?,
+      question: `What is ${module?.title}?`,
       options: ["Option A", "Option B", "Option C", "Option D"],
       answer: "Option A",
     },
@@ -55,7 +54,7 @@ const Quizinterface = ({ module }) => {
       </Button>
 
       {submitted && (
-        <Typography className={result-message ${isCorrect ? "correct" : "wrong"}}>
+        <Typography className={`result_message ${isCorrect ? "correct" : "wrong"}`}>
           {isCorrect ? "Correct!" : "Wrong answer!"}
         </Typography>
       )}
