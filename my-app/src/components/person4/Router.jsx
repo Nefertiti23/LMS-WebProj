@@ -13,12 +13,16 @@ import Certificates from './certificates/Certificates';
 import Notificatins from './notifications/Notifications';
 import CourseCatalog from '../person2/CourseCatalog/CourseCatalog';
 import CourseEnrollment from '../person2/CourseEnrollment/CourseEnrollment';
+import AdminDashboard from '../person1/Admin-dashboard/Admin-dashboard';
 
 export default function Router({ user, userHandler, userArr, setUserArr }) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login theuser={user} />} />
+      <Route path="/login" element={<Login theuser={user} />} />
+      <Route path="/admin-dashboard" element={<AdminDashboard theuser={user} />} />
+
       <Route path="/signup" element={<Signup handleUser={userHandler} 
       allusers={userArr} 
       handleUsers={setUserArr} />} />

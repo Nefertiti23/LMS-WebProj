@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function App() {
   const [allUsers, setUsers] = useState (() => {
     var savedUsers = localStorage.getItem('allUsers');
-    return savedUsers ? Json.parse(savedUsers) : [{
+    return savedUsers ? JSON.parse(savedUsers) : [{
       email: 'JohnnyDoe@reve.com',
       username: 'Johnny',
       password: 'password123',

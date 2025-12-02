@@ -19,23 +19,7 @@
   color: var(--primary);
 }
 
-/* PROFILE PREVIEW */
-/* .profile-preview-container {
 
-   width: 400px;  
-   margin-bottom: 25px;
-  display: flex;
-  padding: 35px;
-  background: white;
-
-  border-radius: 15px;
-  border: 2px solid #000;
-  box-shadow: 3px 3px 0 0 black;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 .profile-preview-container {
   margin-bottom: 25px;
   display: flex;
@@ -45,7 +29,6 @@
   width: 400px;
   padding: 35px;
   background: white;
-  /* MUI-like design */
   border-radius: 15px;
   border: 2px solid #000;
   box-shadow: 3px 3px 0 0 black;
@@ -135,7 +118,7 @@
 }
 
 .progress-card {
-  width: 250px;
+  width: 300px;
   padding: 15px;
   background-color: white;
   border-radius: 15px;
