@@ -1,12 +1,12 @@
 .sidenav {
   width: 250px;
   height: 100vh;
-  background-color: var(--navBar); /* main sidebar color */
+  background-color: var(--navBar); 
   color: var(--textLighter);
   display: flex;
   flex-direction: column;
   padding: 20px;
-  box-sizing: border-box;
+
 }
 
 .sidenav-header {
@@ -32,16 +32,16 @@
   font-size: 14px;
   padding: 8px 12px;
   border-radius: 6px;
-  transition: background 0.2s ease, font-weight 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .sidenav-link:hover {
   background-color: var(--navBar-dark);
-  font-weight: 600;
+  font-weight: 100;
 }
 
 .sidenav-link.active {
   background-color: var(--navBar-dark);
   color: white;
-  font-weight: 600;
+  font-weight: 100;
 }

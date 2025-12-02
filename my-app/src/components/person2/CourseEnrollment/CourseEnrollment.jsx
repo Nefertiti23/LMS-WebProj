@@ -14,7 +14,6 @@ function LinearDeterminate() {
   );
 }
 
-
 function CourseEnrollment() {
   const [enrolledCourses, setEnrolledCourses] = useState([]);
 

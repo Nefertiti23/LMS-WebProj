@@ -48,14 +48,14 @@
 }
 
 .signup-container p.error {
-  color: #dc2626; /* red */
+  color: #dc2626; 
   font-size: 0.8rem;
   margin-top: 5px;
   text-align: left;
 }
 
 .signup-container p.success {
-  color: #16a34a; /* green */
+  color: #16a34a; 
   font-size: 0.8rem;
   margin-top: 5px;
   text-align: left;

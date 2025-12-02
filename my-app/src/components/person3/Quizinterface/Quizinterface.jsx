@@ -12,8 +12,9 @@ const Quizinterface = ({ module }) => {
   const questions = [
     {
       question: `What is ${module?.title}?`,
+      question: `What is ${module?.title}?`,
       options: ["Option A", "Option B", "Option C", "Option D"],
-      answer: "Option A",
+      answer: "Option A"
     },
   ];
 

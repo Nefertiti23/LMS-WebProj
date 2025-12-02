@@ -16,7 +16,7 @@ export default function Dashboard({ a_user }) {
       enrolledIds.includes(c.course_id)
     );
 
-    // Show only first 3 cards
+    
     setEnrolledCourses(userCourses.slice(0, 3));
   }, []);
 

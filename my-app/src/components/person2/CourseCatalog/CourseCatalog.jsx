@@ -45,7 +45,7 @@ const matchesInstructor = instructorFilter
           <CourseCard
             key={course.course_id}
             course={course}
-            onEnroll={handleEnrollment} // Correct prop name
+            onEnroll={handleEnrollment} 
           />
         ))}
       </div>
