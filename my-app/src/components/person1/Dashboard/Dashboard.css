@@ -37,14 +37,14 @@
   align-items: center;
 }
 
-.profile-preview-box .imagebox img {
+ .profile-preview-box .imagebox img {
   border: 1.5px solid black;
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
-}
+} 
 
 .profile-preview-box .name {
   font-weight: 700;
@@ -68,11 +68,9 @@
   width: 250px;
   padding: 15px;
   background: white;
-
   border-radius: 15px;
   border: 2px solid black;
   box-shadow: 3px 3px 0 0 black;
-
   transition: 0.2s;
 }
 
@@ -98,7 +96,7 @@
   font-weight: 600;
 }
 
-/* SEE ALL BUTTON */
+
 .see-all-btn {
   font-size: 1rem;
   font-weight: 600;
