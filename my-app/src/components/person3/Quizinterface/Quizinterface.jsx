@@ -8,13 +8,14 @@ import {
   Button,
 } from "@mui/material";
 
+import './Quizinterface.css'
+
 const Quizinterface = ({ module }) => {
   const questions = [
     {
       question: `What is ${module?.title}?`,
-      question: `What is ${module?.title}?`,
-      options: ["Option A", "Option B", "Option C", "Option D"],
-      answer: "Option A"
+      options: ["ab+c", "m", "q", "x+y"],
+      answer: "m"
     },
   ];
 
@@ -29,12 +30,12 @@ const Quizinterface = ({ module }) => {
   };
 
   return (
-    <Box className="quiz-container">
-      <Typography variant="h5" className="quiz-title">
+    <div className="quiz-container">
+      <div className="quiz-title">
         Quiz for {module?.title}
-      </Typography>
+      </div>
 
-      <Typography className="quiz-question">{questions[0].question}</Typography>
+      <div className="quiz-question">{questions[0].question}</div>
 
       <RadioGroup
         value={selectedOption}
@@ -55,11 +56,11 @@ const Quizinterface = ({ module }) => {
       </Button>
 
       {submitted && (
-        <Typography className={`result_message ${isCorrect ? "correct" : "wrong"}`}>
+        <p className={`result-message ${isCorrect ? "correct" : "wrong"}`}>
           {isCorrect ? "Correct!" : "Wrong answer!"}
-        </Typography>
+        </p>
       )}
-    </Box>
+    </div>
   );
 };
 

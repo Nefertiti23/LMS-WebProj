@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { courses } from "../courses";  
 import "./CourseEnrollment.css";
 import Box from '@mui/material/Box';
@@ -16,6 +17,7 @@ function LinearDeterminate() {
 
 function CourseEnrollment() {
   const [enrolledCourses, setEnrolledCourses] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const enrolledId = JSON.parse(localStorage.getItem("enrolled")) || [];
@@ -43,6 +45,8 @@ function CourseEnrollment() {
               <LinearDeterminate />
               <p className="text-sm">3/6 quizzes completed</p>
               <AssignmentSubmission />
+              <button className="border bg-(--secondary) py-1.5 rounded-lg text-white hover:bg-(--darkpinkAccent)"
+              onClick={() => navigate('/quizinterface')}>Go to quiz</button>
             </div>
           ))}
         </div>

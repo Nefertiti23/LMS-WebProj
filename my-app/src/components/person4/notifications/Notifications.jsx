@@ -5,32 +5,23 @@ import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
-const buttons = [
-  <Button key="one">Mark all as read</Button>,
-  <Button key="two" color="error">Clear all</Button>
-];
-
 export default function Notifications() {
-  const [notifications, setNotifications] = useState([]);
+  const [notifications, setNotifications] = useState([
+      { id: 1, message: 'Logged in', severity: 'warning', read: false },
+      { id: 2, message: 'Payment Confirmed', severity: 'success', read: false },
+      { id: 3, message: 'Thanks for joining', severity: 'success', read: true }
+    ]);
 
-  useEffect(() => {
-    const saved = localStorage.getItem('notifications');
-    if (saved) {
-      setNotifications(JSON.parse(saved));
-    } else {
-      const defaultNotifs = [
-        { id: 1, message: 'Logged in', severity: 'warning', read: false },
-        { id: 2, message: 'Payment Confirmed', severity: 'success', read: false },
-        { id: 3, message: 'Thanks for joining', severity: 'success', read: true }
-      ];
-      setNotifications(defaultNotifs);
-    }
-  }, []);
+  console.log(notifications);
 
-  // Save to localStorage whenever notifications change
-//   useEffect(() => {
-//     localStorage.setItem('notifications', JSON.stringify(notifications));
-//   }, [notifications]);
+  const buttons = [
+    <Button key="one" onClick={() => {
+      setNotifications(prev =>
+        prev.map(notif => ({...notif, read: true}))
+      );
+    }}>Mark all as read</Button>,
+    <Button key="two" color="error" onClick={() => setNotifications([])}>Clear all</Button>
+  ];
 
   const markAsRead = (id) => {
     setNotifications(prev =>
@@ -49,7 +40,9 @@ export default function Notifications() {
       <h3 className='font-semibold text-3xl'>Notifications</h3>
       <div className="px-10 py-6 border border-slate-200 m-auto rounded-lg shadow-md 
       flex flex-col gap-0.5 bg-white w-[70vw]">
-        <p className='text-gray-500 my-2'>You have {notifications.reduce((acc, val) => !val.read ? acc+1 : acc, 0)} unread notifications!</p>
+        <p className='text-gray-500 my-2'>You have {
+        notifications.reduce((acc, val) => !val.read ? acc+1 : acc, 0)
+        } unread notifications!</p>
         <ButtonGroup className='mb-4' size="small" aria-label="Small button group">
             {buttons}
         </ButtonGroup>

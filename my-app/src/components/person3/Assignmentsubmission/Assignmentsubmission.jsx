@@ -1,30 +1,28 @@
 import { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
+import './Assignmentsubmission.css'
 
 const AssignmentSubmission = () => {
   const [file, setFile] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <Box sx={{ mt: 2, p: 2, border: '1px solid #ccc', borderRadius: 2 }}>
-      <Typography variant="h6">Assignment Submission</Typography>
-      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-      <Button
-        variant="contained"
-        color="primary"
+    <div className="assignment-container">
+      <h3>Assignment Submission</h3>
+      <input type="file" onChange={(e) => setFile(e.target.files[0])} className="border w-35 rounded-xl p-1 hover:bg-slate-200" />
+      <button
         onClick={() => {
           if (file) setSubmitted(true);
         }}
-        sx={{ ml: 2, mt: 1 }}
       >
         Submit
-      </Button>
+      </button>
       {submitted && (
-        <Typography sx={{ color: 'green', mt: 1 }}>
+        <div className="message">
           Submitted successfully!
-        </Typography>
+        </div>
       )}
-    </Box>
+    </div>
   );
 };
 
