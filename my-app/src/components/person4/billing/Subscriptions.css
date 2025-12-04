@@ -5,3 +5,24 @@
 .planBox:not(.veryactive):hover {
     transform: translateY(-10px);
 }
+
+.planBox.veryactive {
+  border-color: var(--secondary);
+  background-color: var(--secondary-200);
+}
+
+.planBox .price {
+    color: var(--primary);
+}
+
+.subscribeBtn {
+    background-color: var(--primary);
+}
+
+.subscribeBtn:hover {
+    background-color: var(--primary-200)
+}
+
+.cuurentPlan {
+    color: var(--secondary);
+}

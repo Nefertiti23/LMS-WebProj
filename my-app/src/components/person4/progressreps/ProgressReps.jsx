@@ -124,7 +124,7 @@ const card = (cardName, value, desc) => (
           {cardName}
         </Typography>
       }
-      <Typography variant="h4" component="div" sx={{fontWeight: "bold"}}>
+      <Typography variant="h4" component="div" sx={{fontWeight: "bold", color: "var(--primary)"}}>
         {value}
       </Typography>
       <Typography sx={{ color: 'text.secondary'}}>{desc}</Typography>
@@ -143,7 +143,7 @@ const cardWP = (cardName, value, desc, total) => (
           {cardName}
         </Typography>
       }
-      <Typography variant="h4" component="div" sx={{fontWeight: "bold"}}>
+      <Typography variant="h4" component="div" sx={{fontWeight: "bold", color: "var(--primary)"}}>
         {value}
       </Typography>
       <Typography sx={{ color: 'text.secondary'}}>{desc}</Typography>

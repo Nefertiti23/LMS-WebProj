@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  /* Your color palette */
+/* :root {
   --primary: #3b82f6;
   --secondary: #8b5cf6;
   --background: #f3efec;
@@ -10,9 +9,36 @@
   --secondaryLight: #f0edf6;
   --primaryButtonHover: #3474da;
   --lightButtonHover: #f2f5fe;
-  --inputOutline: #dcdae1;
+  --inputSecondary: #dcdae1;
   --textLighter: #becbda;
+} */
+
+:root {
+  --primary: #3c6e71ff;
+  --secondary: #ea3788;
+  --background: #efefef;
+  --text: #1f2937;
+  --navBar: #284b63ff;
+
+  --secondary-200: #fff6efab;
+  --secondaryLight: #ffcae2;
+  --primary-200: #30595b;
+  --primary-2: #30595b10;
+  --navBar-dark: #1c3546;
+  --primaryButtonHover: #3474da;
+  --lightButtonHover: #f2f5fe;
+  --inputSecondary: #e4e4e4;
+  --textLighter: #becbda;
+
+  --pinkAccent: #ea3788;
+  --darkpinkAccent: #c92f74;
 }
+
+/* --stormy-teal: #3c6e71ff;
+--white: #ffffffff;
+--alabaster-grey: #d9d9d9ff;
+--smoky-rose: #a26769ff;
+--yale-blue: #284b63ff; */
 
 body {
   margin: 0;
@@ -41,6 +67,10 @@ html {
 }
 
 nav {
-  background-color: var(--text);
+  background-color: var(--navBar);
   color: var(--textLighter);
+}
+
+nav .link:hover {
+  background-color: var(--navBar-dark);
 }

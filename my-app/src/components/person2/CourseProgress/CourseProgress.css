@@ -1,0 +1,97 @@
+.progress {
+  padding: 20px;
+}
+
+.progress_h {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.progress_cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px 0;
+}
+
+/* Individual progress card */
+.course_card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  padding: 20px;
+  width: 280px;
+  min-height: 280px; /* same as course catalog */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* top-title, middle-progress, bottom-slider */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.course_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--separator);
+  text-align: center; /* optional: center the title */
+}
+
+.progress_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  min-height: 80px; /* enough space for center alignment */
+  flex-grow: 0; /* prevent it from pushing the slider out */
+}
+
+.progress_label {
+  font-weight: 600;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--separator);
+  padding-bottom: 4px;
+}
+
+/* Slider styling */
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: #e5e7eb;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}

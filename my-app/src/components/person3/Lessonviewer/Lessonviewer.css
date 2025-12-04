@@ -1,0 +1,47 @@
+.lesson-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.lesson-container h2 {
+  margin-bottom: 10px;
+}
+
+.lesson-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.lesson-container li {
+  margin-bottom: 8px;
+}
+
+.lesson-container button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #1976d2;
+  background-color: #fff;
+  color: #1976d2;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.lesson-container button:hover {
+  background-color: #1976d2;
+  color: white;
+}
+
+.lesson-container button.selected {
+  background-color: #1976d2;
+  color: white;
+}
+
+.selected-module {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+}

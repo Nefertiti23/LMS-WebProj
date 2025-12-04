@@ -19,7 +19,7 @@ form button.saveBtn {
 }
 
 form button.saveBtn:hover {
-    background-color: var(--primaryButtonHover);
+    background-color: var(--primary-200);
     cursor: pointer;
 }
 
@@ -30,7 +30,7 @@ form button.cancelBtn {
 }
 
 form button.cancelBtn:hover {
-    background-color: var(--lightButtonHover);
+    background-color: var(--primary-2);
     cursor: pointer;
 }
 

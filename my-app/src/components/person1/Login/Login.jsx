@@ -1,44 +1,46 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
 
-export default function Login({theuser}) {
+export default function Login({ theuser, allusers, handleUser, handleUsers }) {
   const navigate = useNavigate();
-  const [error, setError] = useState('');
-
-  // const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleLogin = () => {
-    var inputname = document.getElementById('inputname').value;
-    var inputpass = document.getElementById('inputpass').value;
+    const inputname = document.getElementById("inputname").value;
+    const inputpass = document.getElementById("inputpass").value;
 
-    if (theuser.username !== inputname) {
+    if (!allusers || allusers.length === 0) {
+      setError("User database not loaded");
+      return;
+    }
+
+    const foundUser = allusers.find(user => user.username === inputname);
+
+    // Check username
+    if (!foundUser) {
       setError("User does not exist.");
       return;
     }
 
-    else if (theuser.password !== inputpass) {
+    // Check password
+    if (foundUser.password !== inputpass) {
       setError("Incorrect password");
       return;
     }
 
+    setError("");
+    handleUser(foundUser);
+
+    if (foundUser.role === "admin") {
+      navigate("/admin-dashboard");
+    } 
+    else if (foundUser.role === "teacher") {
+      navigate("/teacher-dashboard");
+    } 
     else {
       navigate("/dashboard");
     }
-
-    setError('');
-
-    // Save logged-in user
-    // localStorage.setItem("loggedInUser", JSON.stringify(user));
-
-    // Navigate based on role
-    // if (user.role === "admin") {
-    //   navigate("/admin-dashboard");
-    // } else if (user.role === "teacher") {
-    //   navigate("/teacher-dashboard");
-    // } else {
-    //   navigate("/dashboard");
-    // }
   };
 
   return (
@@ -47,18 +49,16 @@ export default function Login({theuser}) {
 
       <div>
         <label>Username</label>
-        <input id="inputname"
-          type="text"
-        />
+        <input id="inputname" type="text" />
       </div>
 
       <div>
         <label>Password</label>
-        <input id="inputpass"
-          type="password"
-        />
+        <input id="inputpass" type="password" />
       </div>
-      {<p>{error}</p>}
+
+      {error && <p className="error-text">{error}</p>}
+
       <button onClick={handleLogin}>Login</button>
 
       <Link to="/signup">

@@ -25,7 +25,7 @@
 .signup-container input {
   width: 100%;
   padding: 10px;
-  border: 1.5px solid var(--inputOutline);
+  border: 1.5px solid var(--inputSecondary);
   border-radius: 6px;
   font-size: 0.875rem;
   margin-top: 5px;
@@ -44,18 +44,18 @@
 }
 
 .signup-container button.create-btn:hover {
-  background-color: var(--primaryButtonHover);
+  background-color: var(--primary-200);
 }
 
 .signup-container p.error {
-  color: #dc2626; /* red */
+  color: #dc2626; 
   font-size: 0.8rem;
   margin-top: 5px;
   text-align: left;
 }
 
 .signup-container p.success {
-  color: #16a34a; /* green */
+  color: #16a34a; 
   font-size: 0.8rem;
   margin-top: 5px;
   text-align: left;

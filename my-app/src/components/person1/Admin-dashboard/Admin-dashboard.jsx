@@ -1,31 +1,23 @@
 import SideNav from './SideNav';
 import TopNav from '../Dashboard/TopNav';
 import './admin-dashboard.css';
+import { courses } from '../../person2/courses'; // import courses
 
-export default function AdminDashboard() {
-  // Get logged-in user
-  const user = JSON.parse(localStorage.getItem('loggedInUser'));
-
-  // Dummy stats
-  const totalUsers = 50;
-  const totalCourses = 10;
-  const totalTeachers = 5;
-
-  // Dummy users list
-  const dummyUsers = [
-    { id: 1, username: 'Ali123', role: 'Student' },
-    { id: 2, username: 'Sara01', role: 'Teacher' },
-    { id: 3, username: 'Admin01', role: 'Admin' },
-  ];
+export default function AdminDashboard({theuser, allusers}) {
+  console.log(allusers);
+  // Stats
+  const totalUsers = allusers.length;
+  const totalCourses = courses.length;
+  const totalTeachers = allusers.filter(u => u.role === 'teacher').length;
 
   return (
     <div className="admin-dashboard-wrapper">
       <SideNav />
       <div className="admin-dashboard-content-wrapper">
-        <TopNav user={user} />
+        <TopNav user={theuser} />
 
         <div className="admin-dashboard-content">
-          <h2>Hello, {user?.username || "Admin"} (Admin)</h2>
+          <h2>Hello, {theuser?.username || "Admin"} (Admin)</h2>
 
           <div className="cards-container">
             <div className="card">
@@ -48,13 +40,35 @@ export default function AdminDashboard() {
               <tr>
                 <th>Username</th>
                 <th>Role</th>
+                <th>Email</th>
               </tr>
             </thead>
             <tbody>
-              {dummyUsers.map(u => (
-                <tr key={u.id}>
+              {allusers.map((u, index) => (
+                <tr key={index}>
                   <td>{u.username}</td>
                   <td>{u.role}</td>
+                  <td>{u.email}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <h3>Courses List</h3>
+          <table className="users-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Instructor</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {courses.map(c => (
+                <tr key={c.course_id}>
+                  <td>{c.title}</td>
+                  <td>{c.instructor_name}</td>
+                  <td>{c.price}</td>
                 </tr>
               ))}
             </tbody>

@@ -56,7 +56,6 @@ export default function Billing ({user_sub, user_payments, handleUser, orderHist
         })));
 
         handleUser(u => ({...u, currentSub: selectedPlan.name}));
-        console.log(selectedPlan.name);
     };
 
     const handleCancel = (id) => {
@@ -65,8 +64,6 @@ export default function Billing ({user_sub, user_payments, handleUser, orderHist
         ));
         handleUser(u => u.currentSub = "");
     };
-
-    console.log(orderHistory);
 
     return (
         <>
@@ -77,7 +74,7 @@ export default function Billing ({user_sub, user_payments, handleUser, orderHist
                 handleCancel={handleCancel} 
                 handleSubscribe={handleSubscribe}
                 subs={subscriptions} />
-             <div className="flex flex-col py-4 px-8 bg-gray-50 rounded-xl shadow-md">
+             <div className="flex flex-col py-4 px-8 bg-white rounded-xl shadow-md">
                 <MembreshipBox sub={user_sub} all_subs={subscriptions} />
                 <div className="h-0.5 bg-gray-300 w-full rounded-full my-4"></div>
                 <OrderHistory allOrders={orderHistory} />

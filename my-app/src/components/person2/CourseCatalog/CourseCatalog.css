@@ -1,0 +1,59 @@
+
+.course_catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center;
+  padding: 20px;
+} 
+.course-card {
+  background-color: var(--primary-bg);
+  border: 2px solid var(--primary-border);
+  border-radius: 12px;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 10px var(--primary-shadow);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+} 
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--primary-shadow-hover);
+  border-color: var(--heading-text);
+} 
+.course-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  position: relative;
+  text-align: center;
+  color: var(--heading-text);
+} 
+.course-card h3::after {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  color: var(--heading-text);
+  font-weight: bold;
+  letter-spacing: 2px;
+} 
+.course-card p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--primary-text);
+} 
+.course-card button {
+  margin-top: auto;
+  padding: 10px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+} 
+.course-card button:hover {
+  background-color: var(--primary-200);
+}

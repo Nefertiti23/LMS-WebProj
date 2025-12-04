@@ -7,11 +7,9 @@
     width: 80px;
     height: 80px;
     margin: 20px;
-
     outline: black 2px solid; 
     outline-offset: 5px; 
     border-radius: 50%;
-
     background-color: whitesmoke;
     overflow: hidden;
 }
@@ -26,7 +24,7 @@
 }
 
 .profileCard button:hover {
-    background-color: var(--secondaryLight);
+    background-color: var(--primary-2);
 }
 
 .imagebox img {
@@ -96,12 +94,12 @@ form img:hover {
 }
 
 form input {
-    border: 1.5px solid var(--inputOutline);
+    border: 1.5px solid var(--inputSecondary);
     padding: 5px 10px;
 }
 
 form input:focus {
-    outline: 2px solid #bea7f4;
+    outline: 2px solid var(--secondaryLight);
     outline-offset: 1px;
     outline-width: 2px;
 }

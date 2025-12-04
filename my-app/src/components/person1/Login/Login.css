@@ -26,7 +26,7 @@
 .login-container input {
   width: 100%;
   padding: 10px;
-  border: 1.5px solid var(--inputOutline);
+  border: 1.5px solid var(--inputSecondary);
   border-radius: 6px;
   font-size: 0.875rem;
   margin-top: 5px;
@@ -37,25 +37,23 @@
   padding: 10px;
   background-color: var(--primary);
   color: white;
-  font-weight: lighter;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .login-container button:hover {
-  background-color: var(--primaryButtonHover);
+  background-color: var(--primary-200);
 }
 
 .login-container p.error {
-  color: #dc2626; /* red-600 */
+  color: #dc2626;
   font-size: 0.8rem;
   margin-top: 5px;
   text-align: left;
 }
 
-.create-btn {
+/* .create-btn {
   margin-top: 10px;
   width: 100%;
   padding: 10px;
@@ -69,4 +67,4 @@
 
 .create-btn:hover {
   background-color: var(--primaryButtonHover);
-}
+} */

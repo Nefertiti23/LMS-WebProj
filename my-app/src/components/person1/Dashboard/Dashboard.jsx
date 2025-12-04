@@ -1,32 +1,81 @@
-import SideNav from '../../person4/navbar/Navbar';
-import TopNav from './TopNav';
-import './Dashboard.css';
+import { useEffect, useState } from "react";
+import TopNav from "./TopNav";
+import "./Dashboard.css";
+import Profile from "../profile/Profile";
+import { courses } from "../../person2/courses";
+import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
 
-export default function Dashboard({a_user}) {
-  // const user = JSON.parse(localStorage.getItem('loggedInUser'));
+export default function Dashboard({ a_user }) {
+  const navigate = useNavigate();
+  const [enrolledCourses, setEnrolledCourses] = useState([]);
 
-  // if (!user) return <p>Please log in</p>;
+  useEffect(() => {
+    const enrolledIds = JSON.parse(localStorage.getItem("enrolled")) || [];
+    const userCourses = courses.filter(c =>
+      enrolledIds.includes(c.course_id)
+    );
 
-  const dummyCourses = [
-    { id: 1, title: "React Basics", description: "Learn React from scratch", image: "/images/react.png" },
-    { id: 2, title: "JavaScript Advanced", description: "Deep dive into JS", image: "/images/js.png" },
-    { id: 3, title: "HTML & CSS Mastery", description: "Build beautiful websites", image: "/images/htmlcss.png" },
-    { id: 4, title: "Python for Beginners", description: "Start coding in Python", image: "/images/python.png" },
-  ];
+    
+    setEnrolledCourses(userCourses.slice(0, 3));
+  }, []);
+
+  const goToEnrollment = () => {
+    navigate('/enrollment');
+  }
 
   return (
     <div className="dashboard-wrapper">
       <div className="dashboard-content">
-        <TopNav />
-        <p className="username">Hello, <span className="username-name">{a_user.username}</span></p>
-        <div className="courses-container">
-          {dummyCourses.map(course => (
-            <div key={course.id} className="course-card">
-              <img src={course.image} alt={course.title} className="course-image" />
-              <h3 className="course-title">{course.title}</h3>
-              <p className="course-desc">{course.description}</p>
-            </div>
-          ))}
+        <h2 className="section-heading px-5">Profile</h2>
+        <div className="profile-preview-container px-5">
+          <Profile a_user={a_user} previewMode={true} />
+        </div>
+
+        {/* ENROLLED COURSES */}
+        <div className="section-heading flex gap-8 items-center px-5">
+          <h2>Your Enrolled Courses</h2>
+          <Button variant="outlined" color={'var(--primary)'} sx={{borderWidth: '1.5px', borderRadius: '50px'}} onClick={goToEnrollment}>See All Enrollments →</Button>
+        </div>
+
+        <div className="enrollment-preview-container px-5">
+          {enrolledCourses.length > 0 ? (
+            enrolledCourses.map(course => (
+              <div key={course.course_id} className="enrollment-preview-card">
+                <h3 className="ep-title">{course.title}</h3>
+                <p className="ep-desc">{course.description}</p>
+                <p className="ep-inst">By: {course.instructor_name}</p>
+              </div>
+            ))
+          ) : (
+            <p>You have not enrolled in any courses yet.</p>
+          )}
+        </div>
+
+        {/* PROGRESS */}
+        <h2 className="section-heading px-5">Your Progress</h2>
+
+        <div className="progress-section px-5">
+          <div className="progress-card">
+            <p className="ofuser">{a_user.userProgress.level}</p>
+            <p className="text-xs font-medium text-neutral-500">STATUS</p>
+          </div>
+
+          <div className="progress-card">
+            <p className="ofuser">
+              {a_user.userProgress.courses.completed.length}
+            </p>
+            <p className="text-xs font-medium text-neutral-500">
+              COURSES COMPLETED
+            </p>
+          </div>
+
+          <div className="progress-card px-5">
+            <p className="ofuser">{a_user.userProgress.streakDays} days</p>
+            <p className="text-xs font-medium text-neutral-500">
+              LONGEST RUNNING STREAK
+            </p>
+          </div>
         </div>
       </div>
     </div>
