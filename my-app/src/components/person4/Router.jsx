@@ -19,6 +19,7 @@ import Billing from './billing/Billing';
 import ProgressReports from './progressreps/ProgressReps';
 import Certificates from './certificates/Certificates';
 import Notificatins from './notifications/Notifications';
+import ViewLesson from './lesson2/ViewLesson';
 
 export default function Router({ user, userHandler, userArr, setUserArr }) {
   return (
@@ -114,6 +115,14 @@ export default function Router({ user, userHandler, userArr, setUserArr }) {
         <SideNav />
         <div className='flex-1 overflow-auto p-10'>
         <Quizinterface module={{title: "the formula for gradient"}}  />
+        </div>
+        </div>
+        } />
+      <Route path="/viewlesson" element={
+        <div className='h-screen flex'>
+        <SideNav />
+        <div className='flex-1 overflow-auto p-10'>
+        <ViewLesson courseid={101} coursename={"Linear Algebra"}  />
         </div>
         </div>
         } />

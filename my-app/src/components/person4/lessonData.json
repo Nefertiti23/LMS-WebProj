@@ -1,0 +1,71 @@
+{
+    "lessons" : [
+        {   
+            "course_id": 101,
+            "lesson_id": 1011,
+            "modules": [
+                {
+                    "module_id": 1,
+                    "module_title": "What is Linear Algebra?",
+                    "module_content": [
+                        "Linear Algebra is a branch of mathematics that focuses on the study of vectors, vector spaces, linear transformations, and systems of linear equations.",
+                        "It involves understanding how these mathematical objects interact with one another through operations like addition and multiplication.",
+                        "Linear algebra is foundational in various fields, including physics, engineering, computer science, and economics, as it provides tools for modeling and solving problems related to multidimensional data, optimization, and transformations.",
+                        "Concepts such as matrices and determinants are central in this discipline, facilitating efficient computation and data manipulation."
+                    ],
+                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                },
+                {
+                    "module_id": 2,
+                    "module_title": "Vectors and Vector Spaces",
+                    "module_content": [
+                        "A vector is a mathematical object that has both magnitude and direction.",
+                        "Vectors can be represented in multiple dimensions and are fundamental to linear algebra.",
+                        "Vector spaces are collections of vectors that satisfy certain properties under addition and scalar multiplication.",
+                        "Understanding vector spaces is crucial for advanced topics in linear algebra."
+                    ],
+                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                },
+                {
+                    "module_id": 3,
+                    "module_title": "Matrices and Operations",
+                    "module_content": [
+                        "Matrices are rectangular arrays of numbers organized in rows and columns.",
+                        "Matrix operations include addition, subtraction, and multiplication.",
+                        "Matrices are used to represent linear transformations and solve systems of equations.",
+                        "Understanding matrix properties is essential for practical applications in computer graphics and data science."
+                    ],
+                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                }
+            ]
+        },
+        {   
+            "course_id": 102,
+            "lesson_id": 1021,
+            "modules": [
+                {
+                    "module_id": 1,
+                    "module_title": "Introduction to Calculus",
+                    "module_content": [
+                        "Calculus is the mathematical study of continuous change.",
+                        "It has two main branches: differential calculus and integral calculus.",
+                        "Differential calculus deals with rates of change and slopes of curves.",
+                        "Integral calculus deals with accumulation and areas under curves."
+                    ],
+                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                },
+                {
+                    "module_id": 2,
+                    "module_title": "Limits and Continuity",
+                    "module_content": [
+                        "Limits describe the value that a function approaches as the input approaches some value.",
+                        "Understanding limits is fundamental to calculus.",
+                        "Continuity refers to the property of a function being unbroken or uninterrupted.",
+                        "A function is continuous if its limit exists at every point in its domain."
+                    ],
+                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                }
+            ]
+        }
+    ]
+}
