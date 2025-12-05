@@ -1,9 +1,10 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom'; 
 import Router from './components/person4/Router';
 import { useState, useEffect } from 'react';
 
 export default function App() {
-  const [allUsers, setUsers] = useState (() => {
+
+  const [allUsers, setUsers] = useState(() => {
     var savedUsers = localStorage.getItem('allUsers');
     return savedUsers ? JSON.parse(savedUsers) : [{
       email: 'JohnnyDoe@reve.com',
@@ -15,7 +16,7 @@ export default function App() {
       billingInfo: ["Visa", "PayPal"],
       currentSub: "Basic Plan",
       orders: [
-        {orderId: 1, name: "Javascript Fundamentals", payDate: "10-10-24", total: 323}
+        { orderId: 1, name: "Javascript Fundamentals", payDate: "10-10-24", total: 323 }
       ],
       userProgress: {
         courses: {
@@ -29,7 +30,7 @@ export default function App() {
           avgScore: 33
         }
       }
-    }, 
+    },
     {
       email: 'jonathan@reve.com',
       username: 'Jon',
@@ -51,7 +52,7 @@ export default function App() {
       billingInfo: ["Visa", "PayPal"],
       currentSub: "Basic Plan",
       orders: [
-        {orderId: 1, name: "Javascript Fundamentals", payDate: "10-10-24", total: 323}
+        { orderId: 1, name: "Javascript Fundamentals", payDate: "10-10-24", total: 323 }
       ],
       userProgress: {
         courses: {
@@ -68,7 +69,6 @@ export default function App() {
     };
   });
 
-
   useEffect(() => {
     localStorage.setItem('currentUser', JSON.stringify(currentuser));
   }, [currentuser]);
@@ -77,12 +77,14 @@ export default function App() {
     localStorage.setItem('allUsers', JSON.stringify(allUsers));
   }, [allUsers]);
 
-  console.log(allUsers);
-
   return (
     <BrowserRouter>
-      <Router user={currentuser} userHandler={setCurrentUser} 
-      userArr={allUsers} setUserArr={setUsers} />
+      <Router 
+        user={currentuser} 
+        userHandler={setCurrentUser} 
+        userArr={allUsers} 
+        setUserArr={setUsers} 
+      />
     </BrowserRouter>
   );
 }

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import './TopNav.css';
-import { Typography, Box } from '@mui/material';
+
 import SchoolIcon from '@mui/icons-material/School';
 
 export default function TopNav() {
