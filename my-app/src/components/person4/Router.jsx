@@ -111,17 +111,17 @@ export default function Router({ user, userHandler, userArr, setUserArr }) {
         </div>
         } />
       <Route path="/quizinterface" element={
-        <div className='h-screen flex'>
-        <SideNav />
-        <div className='flex-1 overflow-auto p-10'>
-        <Quizinterface module={{title: "the formula for gradient"}}  />
-        </div>
-        </div>
-        } />
+          <div className='h-screen flex'>
+              <SideNav />
+              <div className='flex-1 overflow-auto p-10'>
+                  <Quizinterface />
+              </div>
+          </div>
+      } />
       <Route path="/viewlesson" element={
         <div className='h-screen flex'>
         <SideNav />
-        <div className='flex-1 overflow-auto p-10'>
+        <div className='flex-1 overflow-auto'>
         <ViewLesson courseid={101} coursename={"Linear Algebra"}  />
         </div>
         </div>

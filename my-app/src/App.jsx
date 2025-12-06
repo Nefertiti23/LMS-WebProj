@@ -11,7 +11,7 @@ export default function App() {
       password: 'password123',
       role: 'user',
       joinDate: '10-10-23',
-      imageURL: '/vite.svg',
+      imageURL: '/teddy.jpg',
       billingInfo: ["Visa", "PayPal"],
       currentSub: "Basic Plan",
       orders: [
@@ -47,7 +47,7 @@ export default function App() {
       password: 'password123',
       role: 'user',
       joinDate: '10-10-23',
-      imageURL: '/vite.svg',
+      imageURL: '/teddy.jpg',
       billingInfo: ["Visa", "PayPal"],
       currentSub: "Basic Plan",
       orders: [

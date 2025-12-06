@@ -60,7 +60,7 @@ html {
 .screen {
   padding: 2em;
   width: 75vw;
-  margin: 40px auto;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   gap: 30px;

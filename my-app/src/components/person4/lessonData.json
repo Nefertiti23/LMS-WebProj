@@ -13,7 +13,7 @@
                         "Linear algebra is foundational in various fields, including physics, engineering, computer science, and economics, as it provides tools for modeling and solving problems related to multidimensional data, optimization, and transformations.",
                         "Concepts such as matrices and determinants are central in this discipline, facilitating efficient computation and data manipulation."
                     ],
-                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                    "video_url": "https://www.youtube.com/embed/csgNflj69-Y"
                 },
                 {
                     "module_id": 2,
@@ -24,7 +24,7 @@
                         "Vector spaces are collections of vectors that satisfy certain properties under addition and scalar multiplication.",
                         "Understanding vector spaces is crucial for advanced topics in linear algebra."
                     ],
-                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                    "video_url": "https://www.youtube.com/embed/fNk_zzaMoSs"
                 },
                 {
                     "module_id": 3,
@@ -35,9 +35,28 @@
                         "Matrices are used to represent linear transformations and solve systems of equations.",
                         "Understanding matrix properties is essential for practical applications in computer graphics and data science."
                     ],
-                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                    "video_url": "https://www.youtube.com/embed/ZFVFtVbeerI"
                 }
-            ]
+            ],
+            "assignment": {
+                "tasks": [
+                    {
+                        "task_id": 1,
+                        "question": "What is the definition of a vector in linear algebra?",
+                        "description": "Explain what a vector is, including its properties of magnitude and direction."
+                    },
+                    {
+                        "task_id": 2,
+                        "question": "Describe the difference between a vector space and a regular set of numbers.",
+                        "description": "Explain the key properties that define a vector space and how they differ from arbitrary collections of numbers."
+                    },
+                    {
+                        "task_id": 3,
+                        "question": "What are the practical applications of matrices in real-world scenarios?",
+                        "description": "Provide at least three examples of how matrices are used in computer graphics, data science, or engineering."
+                    }
+                ]
+            }
         },
         {   
             "course_id": 102,
@@ -52,7 +71,7 @@
                         "Differential calculus deals with rates of change and slopes of curves.",
                         "Integral calculus deals with accumulation and areas under curves."
                     ],
-                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                    "video_url": "https://www.youtube.com/embed/UukVP7Mg3TU"
                 },
                 {
                     "module_id": 2,
@@ -63,9 +82,28 @@
                         "Continuity refers to the property of a function being unbroken or uninterrupted.",
                         "A function is continuous if its limit exists at every point in its domain."
                     ],
-                    "video_url": "https://www.youtube.com/watch?v=fNk_zzaMoSs"
+                    "video_url": "https://www.youtube.com/embed/WzVQJ6VaJZ0"
                 }
-            ]
+            ],
+            "assignment": {
+                "tasks": [
+                    {
+                        "task_id": 1,
+                        "question": "What are the two main branches of calculus?",
+                        "description": "Explain the difference between differential and integral calculus and provide examples of each."
+                    },
+                    {
+                        "task_id": 2,
+                        "question": "Define the concept of a limit in calculus.",
+                        "description": "Explain what a limit is and why it's important for understanding derivatives and integrals."
+                    },
+                    {
+                        "task_id": 3,
+                        "question": "What does it mean for a function to be continuous?",
+                        "description": "Describe continuity and explain how it relates to limits. Give examples of continuous and discontinuous functions."
+                    }
+                ]
+            }
         }
     ]
 }
